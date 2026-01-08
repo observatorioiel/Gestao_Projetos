@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "dc2dc7e79609c4cb511e",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 396.58340083314067,
+    "width": 630.28199566160515,
+    "tabOrder": 1000
+  },
+  "visualGroup": {
+    "displayName": "Ranking Por Hora",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "d62a7ccf74fc2aa78aa9",
+  "isHidden": true
+}

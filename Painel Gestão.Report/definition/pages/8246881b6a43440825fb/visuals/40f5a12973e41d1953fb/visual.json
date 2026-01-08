@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "40f5a12973e41d1953fb",
+  "position": {
+    "x": 4.3430873139429549,
+    "y": 3.1929819486232489,
+    "z": 1000,
+    "height": 393.39041888451743,
+    "width": 623.96332694151408,
+    "tabOrder": 0
+  },
+  "visualGroup": {
+    "displayName": "Valor Gasto",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "d62a7ccf74fc2aa78aa9"
+}

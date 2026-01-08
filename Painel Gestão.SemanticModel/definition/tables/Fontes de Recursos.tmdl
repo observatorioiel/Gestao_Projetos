@@ -1,0 +1,38 @@
+table 'Fontes de Recursos'
+	lineageTag: 7a52ba4e-f9a6-41ad-8591-772d636ce0f9
+
+	column Descricao_FontesRecursos
+		dataType: string
+		lineageTag: 3cb26cc8-d7f8-4607-9995-060012983fcf
+		summarizeBy: none
+		sourceColumn: Descricao_FontesRecursos
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod__FontesRecursos
+		dataType: int64
+		formatString: 0
+		lineageTag: d9cd4efb-376d-4cdc-ada3-1d6f6593bfb8
+		summarizeBy: none
+		sourceColumn: cod__FontesRecursos
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fontes de Recursos' = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-modelo%202%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsx"), null, true),
+				    #"Fontes de Recursos_Sheet" = Fonte{[Item="Fontes de Recursos",Kind="Sheet"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Fontes de Recursos_Sheet",{{"Column1", type text}}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Tipo Alterado",{{"Column1", "Descricao_FontesRecursos"}}),
+				    #"Índice Adicionado" = Table.AddIndexColumn(#"Colunas Renomeadas", "Índice", 0, 1, Int64.Type),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Índice Adicionado",{{"Índice", "cod__FontesRecursos"}}),
+				    #"Linhas Superiores Removidas" = Table.Skip(#"Colunas Renomeadas1",1)
+				in
+				    #"Linhas Superiores Removidas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

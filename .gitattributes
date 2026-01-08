@@ -1,0 +1,11 @@
+# Tratar arquivos de metadados como texto para permitir comparação de mudanças
+*.json text
+*.bim text
+*.pbir text
+*.item.config.json text
+*.pbi text
+
+# Manter arquivos pesados ou binários como binários
+*.pbix binary
+*.pbit binary
+*.pbids binary

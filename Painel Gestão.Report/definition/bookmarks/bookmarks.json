@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "557f73cfa70474e6b849",
+      "displayName": "Redefinir",
+      "children": [
+        "b129e1754e968c5cf89a",
+        "0e7d2624cb6d75f9f127",
+        "5bec35ea596398792650",
+        "c9c24c41a293bc1d1887"
+      ]
+    },
+    {
+      "name": "7aac81642604a1b5d406",
+      "displayName": "IndicadoresDesempenho",
+      "children": [
+        "7e540c3c06d406c4c058",
+        "4406ef0aa52014580060"
+      ]
+    },
+    {
+      "name": "e5802bc131be0e4928e0",
+      "displayName": "ValorGasto Vs Ranking",
+      "children": [
+        "e3f827d693dcb506e6e2",
+        "df35bec0c2d93be19b3f"
+      ]
+    }
+  ]
+}

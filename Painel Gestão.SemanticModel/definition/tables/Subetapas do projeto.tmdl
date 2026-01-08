@@ -1,0 +1,219 @@
+table 'Subetapas do projeto'
+	lineageTag: f8cc80f6-5153-4d68-9191-488e6b7de6d6
+
+	column 'Nome do Projeto'
+		dataType: string
+		lineageTag: ba24fdd2-3260-446d-b13d-7b1fd0d373a1
+		summarizeBy: none
+		sourceColumn: Nome do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cod Projeto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 73102eb7-68ab-4536-ac52-66fc4d2f47a9
+		summarizeBy: none
+		sourceColumn: Cod Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Atividades Macro'
+		dataType: string
+		lineageTag: b2d59963-d9b9-49f3-a613-dcd5d9fed4f8
+		summarizeBy: none
+		sourceColumn: Atividades Macro
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status '
+		dataType: string
+		lineageTag: 2d09f0ed-7a9a-4391-969b-4b00a4543281
+		summarizeBy: none
+		sourceColumn: "Status "
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_EtapasMacro
+		dataType: int64
+		formatString: 0
+		lineageTag: 08552b7e-a998-4d6c-9a01-81db7257a060
+		summarizeBy: none
+		sourceColumn: Cod_EtapasMacro
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Status
+		dataType: int64
+		formatString: 0
+		lineageTag: d378b5d0-7dd6-4498-88cd-ec3158cbee6c
+		summarizeBy: sum
+		sourceColumn: Cod_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Horas Estimadas'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c5e5a97-0c6e-4ea5-9ab8-407c3e0d84df
+		summarizeBy: sum
+		sourceColumn: Horas Estimadas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 3c3b1c2c-7fe6-4293-ab62-a1cd19d2b346
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: b78ef96c-70b7-44f7-bdb2-4132f7916237
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Projeto_1'
+		dataType: string
+		lineageTag: 5fed1a2f-4540-483e-94a3-6b50030072e8
+		summarizeBy: none
+		sourceColumn: Nome do Projeto_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cod Projeto_2'
+		dataType: string
+		lineageTag: b1148210-b670-462f-9f74-83a1f6e6f462
+		summarizeBy: none
+		sourceColumn: Cod Projeto_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Atividades
+		dataType: string
+		lineageTag: 729da638-5d94-4583-959d-6bd060fb62ca
+		summarizeBy: none
+		sourceColumn: Atividades
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: c94272e3-b011-4ac3-b654-6f01047b35a6
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Projeto_3'
+		dataType: string
+		lineageTag: 4139afd9-153b-4b0d-aa00-29666ac0e435
+		summarizeBy: none
+		sourceColumn: Nome do Projeto_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cod Projeto_4'
+		dataType: string
+		lineageTag: 9ed8d708-dcc3-45d8-a345-07574805cb3a
+		summarizeBy: none
+		sourceColumn: Cod Projeto_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Atividades_5
+		dataType: string
+		lineageTag: d086151f-c614-470b-abe5-da6ef9a8a9e1
+		summarizeBy: none
+		sourceColumn: Atividades_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column15
+		dataType: string
+		lineageTag: a96159d7-f7eb-4da4-a63d-4110597bff6a
+		summarizeBy: none
+		sourceColumn: Column15
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Projeto_6'
+		dataType: string
+		lineageTag: fbddf110-a75f-4135-a3b3-0777af7302e2
+		summarizeBy: none
+		sourceColumn: Nome do Projeto_6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cod Projeto_7'
+		dataType: string
+		lineageTag: f00dcbdf-08fa-4926-8aed-202cea0921ed
+		summarizeBy: none
+		sourceColumn: Cod Projeto_7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Atividades_8
+		dataType: string
+		lineageTag: 8b350c2d-1ec0-4f66-9190-c1b7b596beac
+		summarizeBy: none
+		sourceColumn: Atividades_8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column19
+		dataType: string
+		lineageTag: 49fa1cd0-bfb2-4143-81c0-67ec66594bb8
+		summarizeBy: none
+		sourceColumn: Column19
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Projeto_9'
+		dataType: string
+		lineageTag: d469fb8c-d36a-4ccd-8406-5b9fb2c022a0
+		summarizeBy: none
+		sourceColumn: Nome do Projeto_9
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cod Projeto_10'
+		dataType: string
+		lineageTag: d265e655-5a10-436a-98ab-3fed987c514b
+		summarizeBy: none
+		sourceColumn: Cod Projeto_10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Atividades_11
+		dataType: string
+		lineageTag: aa42fdc5-eb92-4133-bb6f-31d369adf34e
+		summarizeBy: none
+		sourceColumn: Atividades_11
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Subetapas do projeto' = m
+		mode: import
+		queryGroup: Observatorio
+		source =
+				let
+				    Fonte = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-modelo%202%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsx"), null, true),
+				    #"Subetapas do projeto_Sheet" = Fonte{[Item="Subetapas do projeto",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Subetapas do projeto_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Nome do Projeto", type text}, {"Cod Projeto", Int64.Type}, {"Atividades Macro", type text}, {"Horas Estimadas", Int64.Type}, {"Status ", type text}}),
+				    #"Consultas Mescladas" = Table.NestedJoin(#"Tipo Alterado", {"Atividades Macro"}, #"Etapas Macro", {"Descricao_EtapasMacro"}, "Etapas Macro", JoinKind.LeftOuter),
+				    #"Etapas Macro Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "Etapas Macro", {"Cod_EtapasMacro"}, {"Cod_EtapasMacro"}),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Etapas Macro Expandido",{"Nome do Projeto", "Cod Projeto", "Atividades Macro", "Cod_EtapasMacro", "Horas Estimadas", "Status "}),
+				    #"Consultas Mescladas1" = Table.NestedJoin(#"Colunas Reordenadas", {"Status "}, #"Status do Projeto", {"Descricao_status"}, "Status do Projeto", JoinKind.LeftOuter),
+				    #"Status do Projeto Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas1", "Status do Projeto", {"Cod_Status"}, {"Cod_Status"}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Status do Projeto Expandido", each ([Nome do Projeto] <> null))
+				in
+				    #"Linhas Filtradas"
+
+	annotation PBI_ResultType = Table
+

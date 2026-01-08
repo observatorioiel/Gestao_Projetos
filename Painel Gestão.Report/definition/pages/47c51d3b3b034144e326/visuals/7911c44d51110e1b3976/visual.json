@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "7911c44d51110e1b3976",
+  "position": {
+    "x": 524.26901812129415,
+    "y": 393.4240246087864,
+    "z": 10000,
+    "height": 629.76071725678412,
+    "width": 1359.6618944333015,
+    "tabOrder": 11000
+  },
+  "visualGroup": {
+    "displayName": "Desvio Valor",
+    "groupMode": "ScaleMode"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU05",
+      "reportVersionAtImport": {
+        "visual": "1.8.90",
+        "report": "2.0.90",
+        "page": "1.3.90"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "IEl_Padr_o9829585209792102.json",
+      "reportVersionAtImport": {
+        "visual": "1.8.90",
+        "report": "2.0.90",
+        "page": "1.3.90"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "calendarVisual74934D05B71F4C31B0F79D925EE89638"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU05",
+          "path": "BaseThemes/CY24SU05.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "IEl_Padr_o9829585209792102.json",
+          "path": "IEl_Padr_o9829585209792102.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "teste23707460114224921.png",
+          "path": "teste23707460114224921.png",
+          "type": "Image"
+        },
+        {
+          "name": "Observat_rio_Fieg_Branco9983811362892836.png",
+          "path": "Observat_rio_Fieg_Branco9983811362892836.png",
+          "type": "Image"
+        },
+        {
+          "name": "teste24666019825241805.png",
+          "path": "teste24666019825241805.png",
+          "type": "Image"
+        },
+        {
+          "name": "dicadeferramenta8267816710724587.png",
+          "path": "dicadeferramenta8267816710724587.png",
+          "type": "Image"
+        },
+        {
+          "name": "2360524_Mesa_de_trabajo_120163058464598382.png",
+          "path": "2360524_Mesa_de_trabajo_120163058464598382.png",
+          "type": "Image"
+        },
+        {
+          "name": "marca_IEL_2024_completa_negati32425092184264703.png",
+          "path": "marca_IEL_2024_completa_negati32425092184264703.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

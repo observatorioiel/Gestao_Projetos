@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "d62a7ccf74fc2aa78aa9",
+  "position": {
+    "x": 1274.446854663774,
+    "y": 639.99999999999989,
+    "z": 20000,
+    "height": 396.58340083314067,
+    "width": 630.28199566160515,
+    "tabOrder": 20000
+  },
+  "visualGroup": {
+    "displayName": "Valor Gasto Vs Ranking",
+    "groupMode": "ScaleMode"
+  }
+}

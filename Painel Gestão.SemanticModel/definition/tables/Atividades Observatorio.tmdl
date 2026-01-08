@@ -1,0 +1,154 @@
+table 'Atividades Observatorio'
+	lineageTag: f1069741-ea04-4eba-a5a6-41972ba73a65
+
+	column 'Nome do Projeto'
+		dataType: string
+		lineageTag: 9aad8189-72ef-4bca-885b-5875d699bfc3
+		summarizeBy: none
+		sourceColumn: Nome do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'COD Projeto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e651f3d-22fb-45e5-b94f-cd05b9b08b96
+		summarizeBy: none
+		sourceColumn: COD Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Atividades Macro'
+		dataType: string
+		lineageTag: c0b8f72c-bab1-475d-ab1b-bac2bc98ed11
+		summarizeBy: none
+		sourceColumn: Atividades Macro
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tarefa
+		dataType: string
+		lineageTag: bca377ea-58b5-48fb-b49a-a0a7a554a7f1
+		summarizeBy: none
+		sourceColumn: Tarefa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsável pela Atividade'
+		dataType: string
+		lineageTag: fa54bbba-b35a-4729-a365-759b78050ffd
+		summarizeBy: none
+		sourceColumn: Responsável pela Atividade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data da Atividade'
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: 5fac5090-0da0-418c-8346-333920b781f6
+		summarizeBy: none
+		sourceColumn: Data da Atividade
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Horas Utilizadas'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: f951109a-7b54-4b0e-98be-14e7735b78c3
+		summarizeBy: none
+		sourceColumn: Horas Utilizadas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Status '
+		dataType: string
+		lineageTag: 7dfa6844-1f0d-4ba0-9fa4-95213713949b
+		summarizeBy: none
+		sourceColumn: "Status "
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_EtapasMacro
+		dataType: int64
+		formatString: 0
+		lineageTag: 0af8b951-6a2e-493e-83c4-1bcf079dd597
+		summarizeBy: none
+		sourceColumn: Cod_EtapasMacro
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Responsavel
+		dataType: int64
+		formatString: 0
+		lineageTag: 7be422ac-d530-44e5-a332-e4edcc1b1ece
+		summarizeBy: none
+		sourceColumn: COD_Responsavel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Status
+		dataType: int64
+		formatString: 0
+		lineageTag: afe73e27-39ab-46ac-b635-3ee020af2d8a
+		summarizeBy: sum
+		sourceColumn: Cod_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Observação
+		dataType: string
+		lineageTag: 4b86b2f9-2f44-4b10-9cf0-dc84ecebd118
+		summarizeBy: none
+		sourceColumn: Observação
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'coluna teste'
+		dataType: string
+		lineageTag: 99f2e1fe-eb06-4342-bb6b-2c4aad83b4ce
+		summarizeBy: none
+		sourceColumn: coluna teste
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: string
+		lineageTag: 60bf4108-97a7-4712-a288-7e0d4c30d2d9
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Atividades Observatorio' = m
+		mode: import
+		queryGroup: Observatorio
+		source =
+				let
+				    Fonte = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-modelo%202%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsx"), null, true),
+				    Atividades_Sheet = Fonte{[Item="Atividades",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Atividades_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Nome do Projeto", type text}, {"COD Projeto", Int64.Type}, {"Atividades Macro", type text}, {"Tarefa", type text}, {"Responsável pela Atividade", type text}, {"Data da Atividade", type date}, {"Horas Utilizadas", type datetime}, {"Status ", type text}}),
+				    #"Consultas Mescladas" = Table.NestedJoin(#"Tipo Alterado", {"Atividades Macro"}, #"Etapas Macro", {"Descricao_EtapasMacro"}, "Etapas Macro", JoinKind.LeftOuter),
+				    #"Etapas Macro Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "Etapas Macro", {"Cod_EtapasMacro"}, {"Cod_EtapasMacro"}),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Etapas Macro Expandido",{"Nome do Projeto", "COD Projeto", "Atividades Macro", "Cod_EtapasMacro", "Tarefa", "Responsável pela Atividade", "Data da Atividade", "Horas Utilizadas", "Status "}),
+				    #"Consultas Mescladas1" = Table.NestedJoin(#"Colunas Reordenadas", {"Responsável pela Atividade"}, #"Tabela Hora x Custo Colaborador", {"Colaboradores"}, "Tabela Hora x Custo Colaborador", JoinKind.LeftOuter),
+				    #"Tabela Hora x Custo Colaborador Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas1", "Tabela Hora x Custo Colaborador", {"COD"}, {"COD"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Tabela Hora x Custo Colaborador Expandido",{{"COD", "COD_Responsavel"}}),
+				    #"Colunas Reordenadas1" = Table.ReorderColumns(#"Colunas Renomeadas",{"Nome do Projeto", "COD Projeto", "Atividades Macro", "Cod_EtapasMacro", "Tarefa", "Responsável pela Atividade", "COD_Responsavel", "Data da Atividade", "Horas Utilizadas", "Status "}),
+				    #"Consultas Mescladas2" = Table.NestedJoin(#"Colunas Reordenadas1", {"Status "}, #"Status do Projeto", {"Descricao_status"}, "Status do Projeto", JoinKind.LeftOuter),
+				    #"Status do Projeto Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas2", "Status do Projeto", {"Cod_Status"}, {"Cod_Status"}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Status do Projeto Expandido", each ([Nome do Projeto] <> null) and ([Atividades Macro] <> null) and ([Tarefa] <> null)),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Linhas Filtradas",{{"Horas Utilizadas", type time}})
+				in
+				    #"Tipo Alterado1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

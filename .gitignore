@@ -1,0 +1,18 @@
+# Ignorar o arquivo binário pesado (opcional, mas recomendado se for muito grande)
+*.pbix
+
+# Ignorar arquivos temporários e de trava
+*.lock
+.DS_Store
+
+# Ignorar configurações pessoais que variam de PC para PC
+**/localSettings.json
+**/*.user
+*.abf
+*.usage
+
+# GARANTIR que as pastas do projeto sejam rastreadas
+!**/*.Dataset/
+!**/*.Report/
+!**/*.pbip
+!**/*.pbir

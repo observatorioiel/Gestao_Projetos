@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "97f9dd2d0a323303550c",
+  "position": {
+    "x": 545.3536234972471,
+    "y": 238.87605890341018,
+    "z": 0,
+    "height": 393.97014164462075,
+    "width": 813.646376502753,
+    "tabOrder": 0
+  },
+  "visualGroup": {
+    "displayName": "Projetos",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "294467b894d8a0ec3546"
+}

@@ -1,0 +1,50 @@
+table Desvio_Esforço
+	lineageTag: 36bf0638-e794-46ea-8f6f-05fc703fc094
+
+	column Parâmetro
+		lineageTag: cb1f6466-d093-41ee-97d9-4ae1bd0a8a1f
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parâmetro Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Parâmetro Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro Campos'
+		isHidden
+		lineageTag: 181214ae-9915-465b-bdd2-be9426edcfbb
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parâmetro Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: d949d4c4-c9f0-4f37-b59d-5c5cd017bb59
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Desvio_Esforço = calculated
+		mode: import
+		source =
+				{
+				    ("Desvio de Esforço", NAMEOF('Medidas'[desvio de Esforço]), 0),
+				    ("Horas Estimadas", NAMEOF('Medidas'[HorasEstimadasFormatada]), 1),
+				    ("Horas Ultilizadas", NAMEOF('Medidas'[Total horas Atividades]), 2),
+				    ("DIferença de Horas",NAMEOF([DiferencaHorasFormatada]),3)
+				}
+
+	annotation PBI_Id = 6f03f88dec2643899ded5c757aea8eba
+

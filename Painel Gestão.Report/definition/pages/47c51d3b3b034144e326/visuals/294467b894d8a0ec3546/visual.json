@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "294467b894d8a0ec3546",
+  "position": {
+    "x": 524,
+    "y": 393,
+    "z": 11000,
+    "height": 632.846200548031,
+    "width": 1359,
+    "tabOrder": 10000
+  },
+  "visualGroup": {
+    "displayName": "Desvio Esforço",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

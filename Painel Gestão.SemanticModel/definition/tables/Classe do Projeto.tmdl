@@ -1,0 +1,39 @@
+table 'Classe do Projeto'
+	lineageTag: 7e9b04cd-18f0-451f-a8b1-818fb6879f16
+
+	column Descricao_classe
+		dataType: string
+		lineageTag: 0749399d-5d31-420b-977c-e39f1d033716
+		summarizeBy: none
+		sourceColumn: Descricao_classe
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Classe
+		dataType: int64
+		formatString: 0
+		lineageTag: 9006d4a8-43cd-45e4-a6b8-9625db82cf21
+		summarizeBy: none
+		sourceColumn: Cod_Classe
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Classe do Projeto' = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-modelo%202%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsx"), null, true),
+				    #"Classe do Projeto_Sheet" = Fonte{[Item="Classe do Projeto",Kind="Sheet"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Classe do Projeto_Sheet",{{"Column1", type text}}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Tipo Alterado",{{"Column1", "Descricao_classe"}}),
+				    #"Índice Adicionado" = Table.AddIndexColumn(#"Colunas Renomeadas", "Índice", 0, 1, Int64.Type),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Índice Adicionado",{{"Índice", "Cod_Classe"}}),
+				    #"Linhas Superiores Removidas" = Table.Skip(#"Colunas Renomeadas1",1),
+				    #"Linhas Superiores Removidas1" = Table.Skip(#"Linhas Superiores Removidas",1)
+				in
+				    #"Linhas Superiores Removidas1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

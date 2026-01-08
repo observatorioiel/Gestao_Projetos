@@ -1,0 +1,235 @@
+table 'Projetos Observatorio'
+	lineageTag: e932ff8f-a2de-4913-ad18-c260b377858f
+
+	column Área
+		dataType: string
+		lineageTag: 1c46bfb4-4980-4d8c-a98c-2a27231011a7
+		summarizeBy: none
+		sourceColumn: Área
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Líder do Projeto'
+		dataType: string
+		lineageTag: a979c92c-3df6-43f0-8c4f-39b3837cc492
+		summarizeBy: none
+		sourceColumn: Líder do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Projeto'
+		dataType: string
+		lineageTag: 67060dda-78ae-410c-bebc-97875d3169f1
+		summarizeBy: none
+		sourceColumn: Nome do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cod Projeto'
+		dataType: int64
+		formatString: 0
+		lineageTag: a870f4b7-37e0-4b99-8a76-31a690c7772c
+		summarizeBy: none
+		sourceColumn: Cod Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Início do Projeto'
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: dfb5f992-59f1-4af8-839b-03c1d76c93fd
+		summarizeBy: none
+		sourceColumn: Data Início do Projeto
+
+		variation Variation
+			isDefault
+			relationship: 78620181-7a1f-4a14-8a7e-91943adee7e3
+			defaultHierarchy: LocalDateTable_342ff49d-74d0-4a43-b15b-92b3f6e82aeb.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Data Término do Projeto'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: a6293ada-0d76-47a2-b9d7-a60235f0741d
+		summarizeBy: none
+		sourceColumn: Data Término do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Total de Horas'
+		dataType: double
+		formatString: 0
+		lineageTag: 9b5adef7-838c-4372-9584-9462daa206ad
+		summarizeBy: sum
+		sourceColumn: Total de Horas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Status '
+		dataType: string
+		lineageTag: d980fa31-8b12-4579-a949-affbb1163fe7
+		summarizeBy: none
+		sourceColumn: "Status "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total do Projeto (R$)'
+		dataType: double
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		lineageTag: 078eabbf-2bc6-4fd7-a063-5aaa3a24698b
+		summarizeBy: sum
+		sourceColumn: Total do Projeto (R$)
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column 'Realizado (R$)'
+		dataType: string
+		lineageTag: a0aa315b-599b-417f-83df-7e1f6041b737
+		summarizeBy: none
+		sourceColumn: Realizado (R$)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fonte de Recursos'
+		dataType: string
+		lineageTag: 608ab192-0ec1-4313-b70a-86ed3fac6ba0
+		summarizeBy: none
+		sourceColumn: Fonte de Recursos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Classe
+		dataType: string
+		lineageTag: 659c57eb-d206-44a3-8ab1-953fbe98678c
+		summarizeBy: none
+		sourceColumn: Classe
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cliente Final'
+		dataType: string
+		lineageTag: 280de08b-0188-4ae8-b545-459afb4f329e
+		summarizeBy: none
+		sourceColumn: Cliente Final
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Status
+		dataType: int64
+		formatString: 0
+		lineageTag: ed79f842-b9a1-469f-ba97-cc3f550961f1
+		summarizeBy: none
+		sourceColumn: Cod_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod__FontesRecursos
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ca8dc60-cd12-4af1-8cdf-110c50feaf55
+		summarizeBy: none
+		sourceColumn: cod__FontesRecursos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Classe
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ebf7131-ac65-4755-a72a-82b4016fdfb9
+		summarizeBy: none
+		sourceColumn: Cod_Classe
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_ClienteFinal
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e2cb093-c2ee-47c6-b165-f390d5b21a39
+		summarizeBy: none
+		sourceColumn: Cod_ClienteFinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Demanda
+		dataType: int64
+		formatString: 0
+		lineageTag: 207adb64-fe89-41d8-bc4f-3c28a608d86b
+		summarizeBy: none
+		sourceColumn: Cod_Demanda
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Área Observatório'
+		dataType: string
+		lineageTag: 72ec7fff-5f4f-48be-898c-13a404f6ad0c
+		summarizeBy: none
+		sourceColumn: Área Observatório
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cod Área'
+		dataType: string
+		lineageTag: 70c7d8d8-4054-4690-a755-94e0fa5bd053
+		summarizeBy: none
+		sourceColumn: Cod Área
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lista do Projeto'
+		dataType: string
+		lineageTag: eddd3f2d-1f9c-4e9d-9da7-bb8b6ec9f06f
+		summarizeBy: none
+		sourceColumn: Lista do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Projetos Observatorio' = m
+		mode: import
+		queryGroup: Observatorio
+		source = ```
+				let
+				    Fonte = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-modelo%202%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsx"), null, true),
+				    Projetos_Sheet = Fonte{[Item="Projetos",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Projetos_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Área", type text}, {"Líder do Projeto", type text}, {"Nome do Projeto", type text}, {"Cod Projeto", Int64.Type}, {"Data Início do Projeto", type date}, {"Data Término do Projeto", type date}, {"Total de Horas", Int64.Type}, 
+				  {"Status ", type text}, {"Total do Projeto (R$)", type any}, {"Realizado (R$)", type any}, {"Fonte de Recursos", type text}, {"Classe", type text}, {"Cliente Final", type text}}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Tipo Alterado", each ([Área] <> null)),
+				    #"Consultas Mescladas" = Table.NestedJoin(#"Linhas Filtradas", {"Status "}, #"Status do Projeto", {"Descricao_status"}, "Status do Projeto", JoinKind.LeftOuter),
+				    #"Status do Projeto Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "Status do Projeto", {"Cod_Status"}, {"Status do Projeto.Cod_Status"}),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Status do Projeto Expandido",{"Área", "Líder do Projeto", "Nome do Projeto", "Cod Projeto", "Data Início do Projeto", "Data Término do Projeto", "Total de Horas", "Status ", "Status do Projeto.Cod_Status", "Total do Projeto (R$)", "Realizado (R$)", "Fonte de Recursos", "Classe", "Cliente Final"}),
+				    #"Consultas Mescladas1" = Table.NestedJoin(#"Colunas Reordenadas", {"Fonte de Recursos"}, #"Fontes de Recursos", {"Descricao_FontesRecursos"}, "Fontes de Recursos", JoinKind.LeftOuter),
+				    #"Fontes de Recursos Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas1", "Fontes de Recursos", {"cod__FontesRecursos"}, {"Fontes de Recursos.cod__FontesRecursos"}),
+				    #"Colunas Reordenadas1" = Table.ReorderColumns(#"Fontes de Recursos Expandido",{"Área", "Líder do Projeto", "Nome do Projeto", "Cod Projeto", "Data Início do Projeto", "Data Término do Projeto", "Total de Horas",  "Status ", "Status do Projeto.Cod_Status", "Total do Projeto (R$)", "Realizado (R$)", "Fonte de Recursos", "Fontes de Recursos.cod__FontesRecursos", "Classe", "Cliente Final"}),
+				    #"Consultas Mescladas2" = Table.NestedJoin(#"Colunas Reordenadas1", {"Classe"}, #"Classe do Projeto", {"Descricao_classe"}, "Classe do Projeto", JoinKind.LeftOuter),
+				    #"Classe do Projeto Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas2", "Classe do Projeto", {"Cod_Classe"}, {"Classe do Projeto.Cod_Classe"}),
+				    #"Colunas Reordenadas2" = Table.ReorderColumns(#"Classe do Projeto Expandido",{"Área", "Líder do Projeto", "Nome do Projeto", "Cod Projeto", "Data Início do Projeto", "Data Término do Projeto", "Total de Horas",  "Status ", "Status do Projeto.Cod_Status", "Total do Projeto (R$)", "Realizado (R$)", "Fonte de Recursos", "Fontes de Recursos.cod__FontesRecursos", "Classe", "Classe do Projeto.Cod_Classe", "Cliente Final"}),
+				    #"Consultas Mescladas3" = Table.NestedJoin(#"Colunas Reordenadas2", {"Cliente Final"}, #"Cliente Final", {"Descricao_ClienteFinal"}, "Cliente Final.1", JoinKind.LeftOuter),
+				    #"Cliente Final.1 Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas3", "Cliente Final.1", {"Cod_ClienteFinal"}, {"Cliente Final.1.Cod_ClienteFinal"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Cliente Final.1 Expandido",{{"Status do Projeto.Cod_Status", "Cod_Status"}, {"Fontes de Recursos.cod__FontesRecursos", "cod__FontesRecursos"}, {"Classe do Projeto.Cod_Classe", "Cod_Classe"}, {"Cliente Final.1.Cod_ClienteFinal", "Cod_ClienteFinal"}}),
+				    #"Consultas Mescladas4" = Table.NestedJoin(#"Colunas Renomeadas", {"Área"}, #"Áreas da Demanda", {"Descricao_Demanda"}, "Áreas da Demanda", JoinKind.LeftOuter),
+				    #"Colunas Reordenadas3" = Table.ReorderColumns(#"Consultas Mescladas4",{"Área", "Áreas da Demanda", "Líder do Projeto", "Nome do Projeto", "Cod Projeto", "Data Início do Projeto", "Data Término do Projeto", "Total de Horas",  "Status ", "Cod_Status", "Total do Projeto (R$)", "Realizado (R$)", "Fonte de Recursos", "cod__FontesRecursos", "Classe", "Cod_Classe", "Cliente Final", "Cod_ClienteFinal"}),
+				    #"Áreas da Demanda Expandido" = Table.ExpandTableColumn(#"Colunas Reordenadas3", "Áreas da Demanda", {"Cod_Demanda"}, {"Cod_Demanda"}),
+				    #"Linhas Filtradas1" = Table.SelectRows(#"Áreas da Demanda Expandido", each ([Data Início do Projeto] <> null)),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Linhas Filtradas1",{{"Total de Horas", type duration}}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Tipo Alterado1", {"Cod Projeto"})
+				in
+				    #"Duplicatas Removidas"
+				```
+
+	annotation PBI_ResultType = Table
+

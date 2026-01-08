@@ -1,0 +1,270 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "a4f570040badd14c5030",
+  "position": {
+    "x": 9.78266061619298,
+    "y": 0,
+    "z": 0,
+    "height": 594.2966324337234,
+    "width": 1270.523047528063,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "calendarVisual74934D05B71F4C31B0F79D925EE89638",
+    "query": {
+      "queryState": {
+        "StartDate": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projetos Observatorio"
+                    }
+                  },
+                  "Property": "Data Início do Projeto"
+                }
+              },
+              "queryRef": "Projetos Observatorio.Data Início do Projeto",
+              "nativeQueryRef": "Data Início do Projeto"
+            }
+          ]
+        },
+        "events": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projetos Observatorio"
+                    }
+                  },
+                  "Property": "Lista do Projeto"
+                }
+              },
+              "queryRef": "Projetos Observatorio.Lista do Projeto",
+              "nativeQueryRef": "Lista do Projeto"
+            }
+          ]
+        },
+        "EventGroup": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projetos Observatorio"
+                    }
+                  },
+                  "Property": "Classe"
+                }
+              },
+              "queryRef": "Projetos Observatorio.Classe",
+              "nativeQueryRef": "Classe"
+            }
+          ]
+        },
+        "EventDetails": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Subetapas do projeto"
+                    }
+                  },
+                  "Property": "Atividades Macro"
+                }
+              },
+              "queryRef": "Subetapas do projeto.Atividades Macro",
+              "nativeQueryRef": "Atividades Macro"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Projetos Observatorio"
+                  }
+                },
+                "Property": "Data Início do Projeto"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "persistCalendarDate": [
+        {
+          "properties": {
+            "persistedDate": {
+              "expr": {
+                "Literal": {
+                  "Value": "'2024-06-30'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "caption": [
+        {
+          "properties": {
+            "captionValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"null\":\"#110473\",\"Gestão_de_Portfólio\":\"#047311\",\"MTE_CAGED\":\"#E66C37\",\"Panorama_Econômico\":\"#6B007B\",\"Projetos_e_Atividades_Internas\":\"#E044A7\",\"Perfil_dos_Municípios\":\"#744EC2\",\"Gestão_do_Conhecimento\":\"#D9B300\",\"Implantação_Amazon\":\"#D64550\",\"PDE_Serra_Verde\":\"#3599B8\",\"Observatório_Nacional\":\"#DFBFBF\",\"Painel_Institucional_Superintendência\":\"#4AC5BB\",\"Painel_Utilidades_Mercado\":\"#5F6B6D\",\"Projeto_Agrodefesa\":\"#FB8281\",\"Treinamentos_e_Capacitações\":\"#F4D25A\",\"Painel_de_Gestão\":\"#7F898A\",\"Atualização_Painel_Mercado\":\"#A4DDEE\",\"Banco_de_Dados_Mineração\":\"#FDAB89\",\"Iniciativas_de_Mercados_CMs\":\"#B687AC\",\"Demandas_Federação\":\"#28738A\",\"Painel_Aprendizagem_SENAI\":\"#A78F8F\",\"Menu_Editais_Observatório\":\"#168980\",\"Painel_dos_Sindicados_Diretoria\":\"#293537\",\"Painel_Inove_Mais_Digital\":\"#BB4A4A\",\"Painel_NPS_Hospitais\":\"#B59525\",\"Bússola_da_Inovação\":\"#475052\",\"Melhoria_Diagnóstivo_de_Inovação\":\"#6A9FB0\",\"Painel_Sinduscon\":\"#BD7150\",\"Pesquisa_Observatório_do_Rio_Grande_do_Sul_Construção_Civil\":\"#7B4F71\",\"Alteração/Ajustes\":\"#110473\",\"Atualização\":\"#047311\",\"Extração de Dados\":\"#E66C37\",\"Painel\":\"#6B007B\",\"Tratamento de Dados\":\"#E044A7\",\"Diagnóstico\":\"#744EC2\",\"Implementação\":\"#D9B300\",\"Planejamento do Projeto\":\"#D64550\",\"Reunião\":\"#3599B8\",\"Estruturação do Projeto\":\"#DFBFBF\",\"Proposta / Contrato\":\"#4AC5BB\",\"Relatório\":\"#5F6B6D\",\"Validação\":\"#FB8281\",\"Identificação de Indicadores\":\"#F4D25A\",\"Apresentação/Entrega\":\"#7F898A\",\"Pesquisa\":\"#A4DDEE\",\"Coleta\":\"#FDAB89\",\"Tabulação\":\"#B687AC\",\"Capacitação\":\"#28738A\",\"Inteligência de Dados\":\"#110473\",\"Gestão\":\"#047311\",\"Inteligência Competitiva\":\"#E66C37\",\"Inteligência de Mercado\":\"#6B007B\",\"Banco de Dados\":\"#110473\",\"Planejamento\":\"#047311\",\"Estudo\":\"#E66C37\"}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "formatGroup": [
+        {
+          "properties": {
+            "formatGroupValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"Alteração/Ajustes\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Atualização\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Extração de Dados\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Painel\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Tratamento de Dados\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Diagnóstico\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Implementação\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Planejamento do Projeto\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Reunião\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Estruturação do Projeto\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Proposta / Contrato\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Relatório\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Validação\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Identificação de Indicadores\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Apresentação/Entrega\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Pesquisa\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Coleta\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Tabulação\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Capacitação\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Inteligência de Dados\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Gestão\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Inteligência Competitiva\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Inteligência de Mercado\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Banco de Dados\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Planejamento\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1},\"Estudo\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":12,\"bold\":false,\"italic\":false,\"underline\":false,\"casing\":\"none\",\"highlight\":\"#FFFF00\",\"opacity\":0,\"backgroundEvent\":false,\"alignment\":\"left\",\"borderEvent\":false,\"borderSize\":1}}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "cellCaption": [
+        {
+          "properties": {
+            "cellCaptionValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "persistCalendarToday": [
+        {
+          "properties": {
+            "persistedToday": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "persistCalendarView": [
+        {
+          "properties": {
+            "calendarView": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dayGridMonth'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "calendarSettings": [
+        {
+          "properties": {
+            "startingWeekDay": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Monday'"
+                }
+              }
+            },
+            "navLink": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "weekNumber": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rtl": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "timeInWeek": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "eventDetails": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "colorSelector": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "holidayJSON": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

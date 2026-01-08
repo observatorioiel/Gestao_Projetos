@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Painel Gestão"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6b1e908d-1188-4de6-a122-5f245272efd0"
+  }
+}

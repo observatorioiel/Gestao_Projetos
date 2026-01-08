@@ -1,0 +1,12 @@
+expression Indicadores =
+		let
+		    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WckktLsvMV0hJVQgoSqzKV4rVQRZzLi0uQRdzLU7LLzq8HCgcCwA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+		    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+		    #"Colunas Renomeadas" = Table.RenameColumns(#"Tipo Alterado",{{"Coluna 1", "Indicadores"}}),
+		    #"Colunas Removidas" = Table.RemoveColumns(#"Colunas Renomeadas",{"Indicadores"})
+		in
+		    #"Colunas Removidas"
+	lineageTag: 96975b35-6c07-491f-bbe3-fe30d26c3f8b
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,64 @@
+relationship ca33c6b3-b597-449e-b897-7f07dbd4c3df
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.Data
+	toColumn: LocalDateTable_fa9eeac4-ca44-4d61-b7ff-012545b1877d.Date
+
+relationship 311da24e-6b95-7bad-a706-35e7ccb423d4
+	fromColumn: 'Atividades Observatorio'.'Data da Atividade'
+	toColumn: Calendario.Data
+
+relationship 84e09850-4e04-6518-5f4f-ccd8314d7438
+	fromColumn: 'Subetapas do projeto'.'Cod Projeto'
+	toColumn: 'Projetos Observatorio'.'Cod Projeto'
+
+relationship f12cd383-6042-4aa8-3bf9-6f925a19bec3
+	fromColumn: 'Atividades Observatorio'.Cod_EtapasMacro
+	toColumn: 'Etapas Macro'.Cod_EtapasMacro
+
+relationship 5807c359-42da-fe7e-13bf-ca423a51dfcd
+	fromColumn: 'Subetapas do projeto'.Cod_EtapasMacro
+	toColumn: 'Etapas Macro'.Cod_EtapasMacro
+
+relationship 12edc5d9-665d-f506-604b-0cfe662747fd
+	fromColumn: 'Atividades Observatorio'.'COD Projeto'
+	toColumn: 'Projetos Observatorio'.'Cod Projeto'
+
+relationship 276988c7-f283-169c-59d5-74a7bd9f1288
+	fromColumn: 'Projetos Observatorio'.cod__FontesRecursos
+	toColumn: 'Fontes de Recursos'.cod__FontesRecursos
+
+relationship d65f7886-b6fe-4f63-6f05-e3dca0267f38
+	fromColumn: 'Projetos Observatorio'.Cod_Classe
+	toColumn: 'Classe do Projeto'.Cod_Classe
+
+relationship 22717af9-5512-3fcc-b368-4c477563b02e
+	fromColumn: 'Projetos Observatorio'.Cod_ClienteFinal
+	toColumn: 'Cliente Final'.Cod_ClienteFinal
+
+relationship a23d404a-6176-5e14-19c3-14da40eadb29
+	fromColumn: 'Projetos Observatorio'.Cod_Status
+	toColumn: 'Status do Projeto'.Cod_Status
+
+relationship bb61ed0e-d3c3-1c4b-0515-5594fc4628a6
+	fromColumn: 'Atividades Observatorio'.COD_Responsavel
+	toColumn: 'Tabela Hora x Custo Colaborador'.COD
+
+relationship 72710d8e-82e1-efeb-b707-3a2e5f41ebda
+	isActive: false
+	fromColumn: 'Atividades Observatorio'.Cod_Status
+	toColumn: 'Status do Projeto'.Cod_Status
+
+relationship 78620181-7a1f-4a14-8a7e-91943adee7e3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Projetos Observatorio'.'Data Início do Projeto'
+	toColumn: LocalDateTable_342ff49d-74d0-4a43-b15b-92b3f6e82aeb.Date
+
+relationship aa6b962e-f691-ddcf-d57e-c0aacd492d78
+	isActive: false
+	fromColumn: 'Projetos Observatorio'.'Data Término do Projeto'
+	toColumn: Calendario.Data
+
+relationship 9d4a8b2a-8c19-a0f3-7047-9937746f604d
+	fromColumn: 'Projetos Observatorio'.Cod_Demanda
+	toColumn: 'Áreas da Demanda'.Cod_Demanda
+
