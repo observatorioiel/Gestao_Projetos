@@ -5,54 +5,13 @@
     "x": 0,
     "y": 0,
     "z": 4000,
-    "height": 125.5202536104262,
-    "width": 292,
-    "tabOrder": 4000
+    "height": 100.39642034246067,
+    "width": 288.71111111111111,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
     "autoSelectVisualType": true,
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Total horas Atividades 0"
-                }
-              },
-              "queryRef": "Medidas.Total horas Atividades 0",
-              "nativeQueryRef": "Horas Utilizada",
-              "displayName": "Horas Utilizada"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
-                  }
-                },
-                "Property": "Total horas Atividades 0"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "labels": [
         {

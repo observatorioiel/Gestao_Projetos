@@ -1,0 +1,56 @@
+table 'Auxiliar 1 - Responsável'
+	lineageTag: 14b84a85-2559-42f8-9dac-3b2d93ae639d
+
+	column 'Nome do Integrante'
+		dataType: string
+		lineageTag: d399c648-aaf6-42af-91e8-e405b781f925
+		summarizeBy: none
+		sourceColumn: Nome do Integrante
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor da Hora'
+		dataType: int64
+		formatString: 0
+		lineageTag: a36b7bb3-48cf-45e8-9a81-c6beef0f2777
+		summarizeBy: sum
+		sourceColumn: Valor da Hora
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cargo
+		dataType: string
+		lineageTag: 3ad8ced5-83a8-44f4-a26b-2d4376972040
+		summarizeBy: none
+		sourceColumn: Cargo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Integrante
+		dataType: int64
+		formatString: 0
+		lineageTag: d1620acd-5826-4e84-8c46-8fec80245dbc
+		summarizeBy: none
+		sourceColumn: Cod_Integrante
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Auxiliar 1 - Responsável' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Gestao_Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsm"), null, true),
+				    #"Auxiliar 1 - Responsável_Sheet" = Source{[Item="Auxiliar 1 - Responsável",Kind="Sheet"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"Auxiliar 1 - Responsável_Sheet", each ([Column1] <> null)),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Filtered Rows", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"➤ Nome do Integrante", type text}, {"Valor da Hora", Int64.Type}, {"Cargo", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"➤ Nome do Integrante", "Nome do Integrante"}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Renamed Columns", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Index",{{"Index", "Cod_Integrante"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

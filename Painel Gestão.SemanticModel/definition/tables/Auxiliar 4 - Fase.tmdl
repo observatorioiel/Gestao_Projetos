@@ -1,0 +1,42 @@
+table 'Auxiliar 4 - Fase'
+	lineageTag: ee7bdebd-8f03-4f5b-9710-d94e1263e0e2
+
+	column Cod_Fase
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f0bc1ac-452f-46fb-a0e2-88c804c58c4d
+		summarizeBy: none
+		sourceColumn: Cod_Fase
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fase do Projeto'
+		dataType: string
+		lineageTag: 8c2bf00c-5f92-4904-ab03-c77d59700edb
+		summarizeBy: none
+		sourceColumn: Fase do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Auxiliar 4 - Fase' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Gestao_Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsm"), null, true),
+				    #"Auxiliar 4 - Fase_Sheet" = Source{[Item="Auxiliar 3 - Etapa e Fase",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Auxiliar 4 - Fase_Sheet",{{"Column1", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers",{"➤ Fase"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Removed Other Columns",{{"➤ Fase", "➤ Fase do Projeto"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns2",{{"➤ Fase do Projeto", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"➤ Fase do Projeto", "Fase do Projeto"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each ([Fase do Projeto] <> null)),
+				    #"Added Index" = Table.AddIndexColumn(#"Filtered Rows", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Index",{{"Index", "Cod_Fase"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

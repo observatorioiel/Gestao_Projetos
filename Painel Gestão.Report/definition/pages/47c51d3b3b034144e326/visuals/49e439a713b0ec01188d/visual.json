@@ -11,105 +11,10 @@
   },
   "visual": {
     "visualType": "gauge",
-    "query": {
-      "queryState": {
-        "MaxValue": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "valorEstimadoTarget"
-                }
-              },
-              "queryRef": "Medidas.valorEstimadoTarget",
-              "nativeQueryRef": "Valor Máximo:",
-              "displayName": "Valor Máximo:"
-            }
-          ]
-        },
-        "TargetValue": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "valorEstimado"
-                }
-              },
-              "queryRef": "Medidas.valorEstimado",
-              "nativeQueryRef": "Valor Estimado:",
-              "displayName": "Valor Estimado:"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "ValorGasto"
-                }
-              },
-              "queryRef": "Medidas.ValorGasto",
-              "nativeQueryRef": "Valor Ultilizado:",
-              "displayName": "Valor Ultilizado:"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
-                  }
-                },
-                "Property": "ValorGasto"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "dataPoint": [
         {
           "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Medidas"
-                        }
-                      },
-                      "Property": "CorGaugevalor"
-                    }
-                  }
-                }
-              }
-            },
             "target": {
               "solid": {
                 "color": {

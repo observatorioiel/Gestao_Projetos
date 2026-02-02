@@ -11,29 +11,6 @@
   },
   "visual": {
     "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Tabela Hora x Custo Colaborador"
-                    }
-                  },
-                  "Property": "Colaboradores"
-                }
-              },
-              "queryRef": "Tabela Hora x Custo Colaborador.Colaboradores",
-              "nativeQueryRef": "Colaboradores",
-              "active": true
-            }
-          ]
-        }
-      }
-    },
     "objects": {
       "data": [
         {
@@ -287,78 +264,6 @@
         },
         "type": "Categorical",
         "howCreated": "User",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "Filter74a77c70307bf063a6c3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Tabela Hora x Custo Colaborador"
-              }
-            },
-            "Property": "Colaboradores"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "t",
-              "Entity": "Tabela Hora x Custo Colaborador",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "t"
-                              }
-                            },
-                            "Property": "Colaboradores"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
         "objects": {
           "general": [
             {

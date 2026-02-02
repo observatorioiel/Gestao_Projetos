@@ -1,0 +1,50 @@
+table BaseStatusProjeto
+	lineageTag: b1e3cdf6-7c06-4b78-8be2-200e2df1090e
+
+	column 'Código (ID)'
+		dataType: string
+		lineageTag: 8a144b0a-8976-4ee0-ab51-42ff03b835f1
+		summarizeBy: none
+		sourceColumn: Código (ID)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data de Alteração Cadastral'
+		dataType: string
+		lineageTag: 6d986f0a-7df3-497a-aacc-d5f4ba58fecf
+		summarizeBy: none
+		sourceColumn: Data de Alteração Cadastral
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Atual'
+		dataType: string
+		lineageTag: 41f93bcd-e80a-44d9-a9b8-320478715a1d
+		summarizeBy: none
+		sourceColumn: Status Atual
+
+		annotation SummarizationSetBy = Automatic
+
+	column Observação
+		dataType: string
+		lineageTag: 46ce7d89-f570-491a-bc4c-4f40a2063309
+		summarizeBy: none
+		sourceColumn: Observação
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BaseStatusProjeto = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Gestao_Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsm"), null, true),
+				    BaseStatusProjeto_Sheet = Source{[Item="BaseStatusProjeto",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(BaseStatusProjeto_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Código (ID)", type any}, {"Data de Alteração Cadastral", type any}, {"Status Atual", type any}, {"Observação", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

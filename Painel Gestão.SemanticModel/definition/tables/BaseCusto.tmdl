@@ -1,0 +1,177 @@
+table BaseCusto
+	lineageTag: fc144b7f-a5b2-4ad1-a46f-19421082ce57
+
+	column 'Nº do Projeto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 80c1e872-3fb5-4449-82e0-e6143c78194a
+		summarizeBy: none
+		sourceColumn: Nº do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Etapa
+		dataType: string
+		lineageTag: 8dc33330-9fa4-43dc-96f6-2f3336a6acb9
+		summarizeBy: none
+		sourceColumn: Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fase
+		dataType: string
+		lineageTag: 4905a494-9ec0-4fb6-8dd2-c2f635eb2059
+		summarizeBy: none
+		sourceColumn: Fase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Responsável
+		dataType: string
+		lineageTag: 2251c26d-09aa-422e-a2a3-862f51f4c1b7
+		summarizeBy: none
+		sourceColumn: Responsável
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Horas Previstas'
+		dataType: double
+		lineageTag: d706f358-dcbb-4d29-bd1d-fac17e9efbc6
+		summarizeBy: sum
+		sourceColumn: Horas Previstas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Descrição
+		dataType: string
+		lineageTag: d93da2a7-35b1-488a-aac6-396a968735ec
+		summarizeBy: none
+		sourceColumn: Descrição
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Custo 3º'
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 6355d2ea-0360-402e-b1ed-ac243a2c5978
+		summarizeBy: sum
+		sourceColumn: Custo 3º
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column 'Valor da Hora '
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: fd0362af-8f57-438c-962f-14cfb9eb5c5d
+		summarizeBy: sum
+		sourceColumn: "Valor da Hora "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column 'Custo Total Previsto '
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 462c7d86-2480-43c8-9b21-9e8ebd2ef1b1
+		summarizeBy: sum
+		sourceColumn: "Custo Total Previsto "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Cod_Etapa
+		dataType: int64
+		formatString: 0
+		lineageTag: 51d60afb-70e6-458e-af19-2558b677e646
+		summarizeBy: none
+		sourceColumn: Cod_Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Fase
+		dataType: int64
+		formatString: 0
+		lineageTag: 66c92bb7-3846-4c35-b575-944a3a9873bc
+		summarizeBy: none
+		sourceColumn: Cod_Fase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Integrante
+		dataType: int64
+		formatString: 0
+		lineageTag: 63df5c34-4da9-4b93-bf1f-026c476522bc
+		summarizeBy: none
+		sourceColumn: Cod_Integrante
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nº Linha'
+		dataType: string
+		lineageTag: 9f5a4dcd-54d4-4b29-8279-93e4f98af369
+		summarizeBy: none
+		sourceColumn: Nº Linha
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Inicial'
+		dataType: string
+		lineageTag: cace5d8f-3684-4c6e-9a57-1fb01ed4aea8
+		summarizeBy: none
+		sourceColumn: Data Inicial
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'data Final'
+		dataType: string
+		lineageTag: ace5e519-1ac1-4d1e-b924-2f8af154f6f6
+		summarizeBy: none
+		sourceColumn: data Final
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nº de Questionários'
+		dataType: string
+		lineageTag: be6c1514-b5f3-4859-8cc0-1b878f07a421
+		summarizeBy: none
+		sourceColumn: Nº de Questionários
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nº de Perguntas'
+		dataType: string
+		lineageTag: 34218ee2-cd0c-4ad7-a589-b06832bba8e5
+		summarizeBy: none
+		sourceColumn: Nº de Perguntas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BaseCusto = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Gestao_Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsm"), null, true),
+				    BaseCusto_Sheet = Source{[Item="BaseCusto",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(BaseCusto_Sheet, [PromoteAllScalars=true]),
+				    #"Filtered Rows1" = Table.SelectRows(#"Promoted Headers", each ([Nº do Projeto] <> null)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows1",{{"Nº do Projeto", Int64.Type}, {"Etapa", type text}, {"Fase", type text}, {"Responsável", type text}, {"Horas Previstas", Int64.Type}, {"Descrição", type text}, {"Custo 3º", Int64.Type}, {"Valor da Hora ", Int64.Type}, {"Custo Total Previsto ", Int64.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Horas Previstas", type duration}, {"Valor da Hora ", Currency.Type}, {"Custo 3º", Currency.Type}, {"Custo Total Previsto ", Currency.Type}}),
+				    #"Merged Queries" = Table.FuzzyNestedJoin(#"Changed Type1", {"Etapa"}, #"Auxiliar 3 - Etapas", {"Etapas"}, "Auxiliar 3 - Etapas", JoinKind.LeftOuter, [IgnoreCase=true, IgnoreSpace=true]),
+				    #"Expanded Auxiliar 3 - Etapas" = Table.ExpandTableColumn(#"Merged Queries", "Auxiliar 3 - Etapas", {"Cod_Etapa"}, {"Cod_Etapa"}),
+				    #"Merged Queries1" = Table.FuzzyNestedJoin(#"Expanded Auxiliar 3 - Etapas", {"Fase"}, #"Auxiliar 4 - Fase", {"Fase do Projeto"}, "Auxiliar 4 - Fase", JoinKind.LeftOuter, [IgnoreCase=true, IgnoreSpace=true]),
+				    #"Expanded Auxiliar 4 - Fase" = Table.ExpandTableColumn(#"Merged Queries1", "Auxiliar 4 - Fase", {"Cod_Fase"}, {"Cod_Fase"}),
+				    #"Merged Queries2" = Table.FuzzyNestedJoin(#"Expanded Auxiliar 4 - Fase", {"Responsável"}, #"Auxiliar 1 - Responsável", {"Nome do Integrante"}, "Auxiliar 1 - Responsável", JoinKind.LeftOuter, [IgnoreCase=true, IgnoreSpace=true]),
+				    #"Expanded Auxiliar 1 - Responsável" = Table.ExpandTableColumn(#"Merged Queries2", "Auxiliar 1 - Responsável", {"Cod_Integrante"}, {"Cod_Integrante"})
+				in
+				    #"Expanded Auxiliar 1 - Responsável"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

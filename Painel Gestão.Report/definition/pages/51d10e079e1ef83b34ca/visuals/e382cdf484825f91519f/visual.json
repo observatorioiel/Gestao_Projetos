@@ -5,35 +5,12 @@
     "x": 0,
     "y": 0,
     "z": 22000,
-    "height": 125,
-    "width": 292,
-    "tabOrder": 0
+    "height": 99.288573187895835,
+    "width": 288.06254398311052,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Qtd Projeto"
-                }
-              },
-              "queryRef": "Medidas.Qtd Projeto",
-              "nativeQueryRef": "Qtd Projetos",
-              "displayName": "Qtd Projetos"
-            }
-          ]
-        }
-      }
-    },
     "objects": {
       "labels": [
         {

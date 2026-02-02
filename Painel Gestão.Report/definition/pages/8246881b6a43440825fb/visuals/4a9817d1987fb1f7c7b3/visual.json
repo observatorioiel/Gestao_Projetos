@@ -11,104 +11,6 @@
   },
   "visual": {
     "visualType": "tableEx",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Atividades Observatorio"
-                    }
-                  },
-                  "Property": "Tarefa"
-                }
-              },
-              "queryRef": "Atividades.Tarefa",
-              "nativeQueryRef": "Atividade",
-              "displayName": "Atividade"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Tabela Hora x Custo Colaborador"
-                    }
-                  },
-                  "Property": "Modelo de Contrato"
-                }
-              },
-              "queryRef": "Tabela Hora x Custo Colaborador.Modelo de Contrato",
-              "nativeQueryRef": "Modelo de Contrato"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Atividades Observatorio"
-                    }
-                  },
-                  "Property": "Data da Atividade"
-                }
-              },
-              "queryRef": "Atividades.Data da Atividade",
-              "nativeQueryRef": "Data da Atividade"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Total horas Atividades"
-                }
-              },
-              "queryRef": "Medidas.Total horas Atividades",
-              "nativeQueryRef": "Horas Utilizadas",
-              "displayName": "Horas Utilizadas"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "ValorGasto"
-                }
-              },
-              "queryRef": "Medidas.Valor HorasHorasTrabalhadas",
-              "nativeQueryRef": "Valor Gasto",
-              "displayName": "Valor Gasto"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Tabela Hora x Custo Colaborador"
-                  }
-                },
-                "Property": "Valor Hora (R$)"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
-      }
-    },
     "objects": {
       "columnWidth": [
         {
@@ -166,76 +68,6 @@
           "selector": {
             "metadata": "Medidas.HorasEstimadasFormatada"
           }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "97.33332680051478D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Total horas Atividades"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "298.95010971182273D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Atividades.Tarefa"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "109.38828720543053D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Valor HorasHorasTrabalhadas"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "120.3882862352031D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Atividades.Data da Atividade"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "81.34574097446679D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Tabela Hora x Custo Colaborador.Modelo de Contrato"
-          }
         }
       ],
       "columnHeaders": [
@@ -292,87 +124,7 @@
           }
         },
         {
-          "properties": {
-            "icon": {
-              "kind": "Icon",
-              "layout": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'Before'"
-                  }
-                }
-              },
-              "verticalAlignment": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'Top'"
-                  }
-                }
-              },
-              "value": {
-                "expr": {
-                  "Conditional": {
-                    "Cases": [
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 4,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Entity": "Medidas"
-                                  }
-                                },
-                                "Property": "horas estimada / horas realizadas"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "1D"
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'SymbolHigh'"
-                          }
-                        }
-                      },
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 1,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Entity": "Medidas"
-                                  }
-                                },
-                                "Property": "horas estimada / horas realizadas"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "1D"
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'SymbolLow'"
-                          }
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -423,27 +175,6 @@
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Total horas Atividades"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
                   "Value": "'Left'"
                 }
               }
@@ -465,48 +196,6 @@
           },
           "selector": {
             "metadata": "Medidas.horas estimada / horas realizadas"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Valor HorasHorasTrabalhadas"
-          }
-        },
-        {
-          "properties": {
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Tabela Hora x Custo Colaborador.Modelo de Contrato"
           }
         }
       ]

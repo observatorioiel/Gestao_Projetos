@@ -1,0 +1,142 @@
+table BaseAtividades
+	lineageTag: b8cbb00d-9a76-473c-be91-9048ce2899d3
+
+	column 'Número do Projeto'
+		dataType: int64
+		formatString: 0
+		lineageTag: b7f2067e-a8f1-4fc8-ab2e-c1b11ac92343
+		summarizeBy: none
+		sourceColumn: Número do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data de Lançamento'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f2ca2d60-fe38-491f-a7ca-a10dfde9b111
+		summarizeBy: none
+		sourceColumn: Data de Lançamento
+
+		variation Variation
+			isDefault
+			relationship: 441438a7-ff8e-4b7c-a508-c2b1cd3a66a4
+			defaultHierarchy: LocalDateTable_d6694cb0-a145-4ec8-ba3b-a6e1ef6dfeb6.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Etapa
+		dataType: string
+		lineageTag: 4f213b23-0bab-4b82-9cdd-eb9e794afaef
+		summarizeBy: none
+		sourceColumn: Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fase
+		dataType: string
+		lineageTag: e41e2932-fbfb-4fd6-8b24-235a7a4fe054
+		summarizeBy: none
+		sourceColumn: Fase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Responsável
+		dataType: string
+		lineageTag: 385e78af-a5f9-42e0-8334-c48c4e11a42f
+		summarizeBy: none
+		sourceColumn: Responsável
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Horas Realizadas'
+		dataType: double
+		lineageTag: 89f55a74-cca4-4b4a-9659-3561a251a9ce
+		summarizeBy: sum
+		sourceColumn: Horas Realizadas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Observação
+		dataType: string
+		lineageTag: 9d794db2-ac7b-47e1-ad88-42ee8e68c359
+		summarizeBy: none
+		sourceColumn: Observação
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Etapa
+		dataType: int64
+		formatString: 0
+		lineageTag: 68334c56-1292-4b1d-b360-a5c2ee3da478
+		summarizeBy: none
+		sourceColumn: Cod_Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Fase
+		dataType: int64
+		formatString: 0
+		lineageTag: ad82f497-d2c8-4413-9cd3-fd602ba75fde
+		summarizeBy: none
+		sourceColumn: Cod_Fase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Integrante
+		dataType: int64
+		formatString: 0
+		lineageTag: 08afd337-170f-470e-a1b2-0d85667620d8
+		summarizeBy: none
+		sourceColumn: Cod_Integrante
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Pesquisa'
+		dataType: string
+		lineageTag: 948a6686-be3c-4c0e-b991-80eb80540afd
+		summarizeBy: none
+		sourceColumn: Nome da Pesquisa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status da Coleta'
+		dataType: string
+		lineageTag: fed067ba-6293-4e1e-bbab-56ababb7b029
+		summarizeBy: none
+		sourceColumn: Status da Coleta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status do Relatório'
+		dataType: string
+		lineageTag: 00bcb1f7-bd0d-448c-a2a2-e5a79cc277ee
+		summarizeBy: none
+		sourceColumn: Status do Relatório
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BaseAtividades = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Gestao_Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsm"), null, true),
+				    BaseAtividades_Sheet = Source{[Item="BaseAtividades",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(BaseAtividades_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Número do Projeto", Int64.Type}, {"Data de Lançamento", type date}, {"Etapa", type text}, {"Fase", type text}, {"Responsável", type text}, {"Horas Realizadas", type duration}, {"Observação", type any}}),
+				    #"Merged Queries" = Table.FuzzyNestedJoin(#"Changed Type", {"Etapa"}, #"Auxiliar 3 - Etapas", {"Etapas"}, "Auxiliar 3 - Etapas", JoinKind.LeftOuter, [IgnoreCase=true, IgnoreSpace=true]),
+				    #"Expanded Auxiliar 3 - Etapas" = Table.ExpandTableColumn(#"Merged Queries", "Auxiliar 3 - Etapas", {"Cod_Etapa"}, {"Cod_Etapa"}),
+				    #"Merged Queries1" = Table.FuzzyNestedJoin(#"Expanded Auxiliar 3 - Etapas", {"Fase"}, #"Auxiliar 4 - Fase", {"Fase do Projeto"}, "Auxiliar 4 - Fase", JoinKind.LeftOuter, [IgnoreCase=true, IgnoreSpace=true]),
+				    #"Expanded Auxiliar 4 - Fase" = Table.ExpandTableColumn(#"Merged Queries1", "Auxiliar 4 - Fase", {"Cod_Fase"}, {"Cod_Fase"}),
+				    #"Merged Queries2" = Table.FuzzyNestedJoin(#"Expanded Auxiliar 4 - Fase", {"Responsável"}, #"Auxiliar 1 - Responsável", {"Nome do Integrante"}, "Auxiliar 1 - Responsável", JoinKind.LeftOuter, [IgnoreCase=true, IgnoreSpace=true]),
+				    #"Expanded Auxiliar 1 - Responsável" = Table.ExpandTableColumn(#"Merged Queries2", "Auxiliar 1 - Responsável", {"Cod_Integrante"}, {"Cod_Integrante"})
+				in
+				    #"Expanded Auxiliar 1 - Responsável"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -11,31 +11,6 @@
   },
   "visual": {
     "visualType": "card",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Top 3 Horas"
-                }
-              },
-              "queryRef": "Medidas.Top 3 Horas",
-              "nativeQueryRef": "Top 3 Horas"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "categoryLabels": [
         {

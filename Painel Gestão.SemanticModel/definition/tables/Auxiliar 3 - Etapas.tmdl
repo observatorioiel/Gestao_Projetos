@@ -1,0 +1,61 @@
+table 'Auxiliar 3 - Etapas'
+	lineageTag: 086bc0c2-9c1c-462c-a012-aa3791ef266d
+
+	column Etapas
+		dataType: string
+		lineageTag: 603ee0ee-adfb-4f5f-9e8a-9f44c745a746
+		summarizeBy: none
+		sourceColumn: Etapas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod-Etapa
+		dataType: string
+		lineageTag: 7a857509-c00f-4e96-92d8-6b5ff3f557e6
+		summarizeBy: none
+		sourceColumn: Cod-Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_Etapa
+		dataType: string
+		lineageTag: 016138cf-ff12-4742-8cc9-15315a2e2fca
+		summarizeBy: none
+		sourceColumn: Desc_Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Etapa
+		dataType: int64
+		formatString: 0
+		lineageTag: b9db7486-cce8-43d0-8b9f-0f9f1b74b299
+		summarizeBy: none
+		sourceColumn: Cod_Etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Auxiliar 3 - Etapas' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Gestao_Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsm"), null, true),
+				    #"Auxiliar 3 - Etapas_Sheet" = Source{[Item="Auxiliar 3 - Etapa e Fase",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Auxiliar 3 - Etapas_Sheet",{{"Column1", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Promoted Headers",{"➤ Etapas"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns",{{"➤ Etapas", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"➤ Etapas", "Etapas"}}),
+				    #"Inserted First Characters" = Table.AddColumn(#"Renamed Columns", "First Characters", each Text.Start([Etapas], 1), type text),
+				    #"Inserted Text After Delimiter" = Table.AddColumn(#"Inserted First Characters", "Text After Delimiter", each Text.AfterDelimiter([Etapas], "-"), type text),
+				    #"Inserted Text After Delimiter1" = Table.AddColumn(#"Inserted Text After Delimiter", "Text After Delimiter.1", each Text.AfterDelimiter([Text After Delimiter], " "), type text),
+				    #"Removed Columns" = Table.RemoveColumns(#"Inserted Text After Delimiter1",{"Text After Delimiter"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"Text After Delimiter.1", "Desc_Etapa"}, {"First Characters", "Cod-Etapa"}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Renamed Columns1", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Added Index",{{"Index", "Cod_Etapa"}})
+				in
+				    #"Renamed Columns2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

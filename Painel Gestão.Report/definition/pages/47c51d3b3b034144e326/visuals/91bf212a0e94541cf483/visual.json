@@ -11,30 +11,6 @@
   },
   "visual": {
     "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Projetos Observatorio"
-                    }
-                  },
-                  "Property": "Nome do Projeto"
-                }
-              },
-              "queryRef": "Projetos Observatorio.Nome do Projeto",
-              "nativeQueryRef": "Projetos",
-              "active": true,
-              "displayName": "Projetos"
-            }
-          ]
-        }
-      }
-    },
     "objects": {
       "data": [
         {

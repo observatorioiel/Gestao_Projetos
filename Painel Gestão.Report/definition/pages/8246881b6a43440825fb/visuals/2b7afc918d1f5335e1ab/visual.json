@@ -12,46 +12,6 @@
   "visual": {
     "visualType": "card",
     "autoSelectVisualType": true,
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Qtd Atividades Em Andamento"
-                }
-              },
-              "queryRef": "Medidas.Qtd Atividades Em Andamento",
-              "nativeQueryRef": "Qtd Atividades Em Andamento"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
-                  }
-                },
-                "Property": "Qtd Atividades Em Andamento"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "labels": [
         {

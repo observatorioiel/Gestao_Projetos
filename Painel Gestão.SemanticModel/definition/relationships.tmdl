@@ -1,64 +1,51 @@
-relationship ca33c6b3-b597-449e-b897-7f07dbd4c3df
+relationship c156b192-a199-45b6-aba0-07d086cb6cc3
 	joinOnDateBehavior: datePartOnly
-	fromColumn: Calendario.Data
-	toColumn: LocalDateTable_fa9eeac4-ca44-4d61-b7ff-012545b1877d.Date
+	fromColumn: BaseProjetos.'Data de Lançamento'
+	toColumn: LocalDateTable_52d6d8c8-b95a-4985-86a6-52cb004ba1fc.Date
 
-relationship 311da24e-6b95-7bad-a706-35e7ccb423d4
-	fromColumn: 'Atividades Observatorio'.'Data da Atividade'
-	toColumn: Calendario.Data
-
-relationship 84e09850-4e04-6518-5f4f-ccd8314d7438
-	fromColumn: 'Subetapas do projeto'.'Cod Projeto'
-	toColumn: 'Projetos Observatorio'.'Cod Projeto'
-
-relationship f12cd383-6042-4aa8-3bf9-6f925a19bec3
-	fromColumn: 'Atividades Observatorio'.Cod_EtapasMacro
-	toColumn: 'Etapas Macro'.Cod_EtapasMacro
-
-relationship 5807c359-42da-fe7e-13bf-ca423a51dfcd
-	fromColumn: 'Subetapas do projeto'.Cod_EtapasMacro
-	toColumn: 'Etapas Macro'.Cod_EtapasMacro
-
-relationship 12edc5d9-665d-f506-604b-0cfe662747fd
-	fromColumn: 'Atividades Observatorio'.'COD Projeto'
-	toColumn: 'Projetos Observatorio'.'Cod Projeto'
-
-relationship 276988c7-f283-169c-59d5-74a7bd9f1288
-	fromColumn: 'Projetos Observatorio'.cod__FontesRecursos
-	toColumn: 'Fontes de Recursos'.cod__FontesRecursos
-
-relationship d65f7886-b6fe-4f63-6f05-e3dca0267f38
-	fromColumn: 'Projetos Observatorio'.Cod_Classe
-	toColumn: 'Classe do Projeto'.Cod_Classe
-
-relationship 22717af9-5512-3fcc-b368-4c477563b02e
-	fromColumn: 'Projetos Observatorio'.Cod_ClienteFinal
-	toColumn: 'Cliente Final'.Cod_ClienteFinal
-
-relationship a23d404a-6176-5e14-19c3-14da40eadb29
-	fromColumn: 'Projetos Observatorio'.Cod_Status
-	toColumn: 'Status do Projeto'.Cod_Status
-
-relationship bb61ed0e-d3c3-1c4b-0515-5594fc4628a6
-	fromColumn: 'Atividades Observatorio'.COD_Responsavel
-	toColumn: 'Tabela Hora x Custo Colaborador'.COD
-
-relationship 72710d8e-82e1-efeb-b707-3a2e5f41ebda
-	isActive: false
-	fromColumn: 'Atividades Observatorio'.Cod_Status
-	toColumn: 'Status do Projeto'.Cod_Status
-
-relationship 78620181-7a1f-4a14-8a7e-91943adee7e3
+relationship 441438a7-ff8e-4b7c-a508-c2b1cd3a66a4
 	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Projetos Observatorio'.'Data Início do Projeto'
-	toColumn: LocalDateTable_342ff49d-74d0-4a43-b15b-92b3f6e82aeb.Date
+	fromColumn: BaseAtividades.'Data de Lançamento'
+	toColumn: LocalDateTable_d6694cb0-a145-4ec8-ba3b-a6e1ef6dfeb6.Date
 
-relationship aa6b962e-f691-ddcf-d57e-c0aacd492d78
-	isActive: false
-	fromColumn: 'Projetos Observatorio'.'Data Término do Projeto'
-	toColumn: Calendario.Data
+relationship AutoDetected_6217b63c-40a5-45ce-a609-c1e48f4e1096
+	fromColumn: BaseCusto.Cod_Etapa
+	toColumn: 'Auxiliar 3 - Etapas'.Cod_Etapa
 
-relationship 9d4a8b2a-8c19-a0f3-7047-9937746f604d
-	fromColumn: 'Projetos Observatorio'.Cod_Demanda
-	toColumn: 'Áreas da Demanda'.Cod_Demanda
+relationship AutoDetected_6f9f46cf-edd8-4e12-bc84-e0fdb1a09993
+	fromColumn: BaseAtividades.Cod_Etapa
+	toColumn: 'Auxiliar 3 - Etapas'.Cod_Etapa
+
+relationship AutoDetected_1c8a0c41-3ca6-4b18-8454-d12bc72cbb3e
+	fromColumn: BaseCusto.Cod_Fase
+	toColumn: 'Auxiliar 4 - Fase'.Cod_Fase
+
+relationship AutoDetected_e3a70d78-871c-443c-8b8c-e33935b63846
+	fromColumn: BaseAtividades.Cod_Fase
+	toColumn: 'Auxiliar 4 - Fase'.Cod_Fase
+
+relationship AutoDetected_7d3ecc30-3c8f-4eff-aef5-59f149add419
+	fromColumn: BaseCusto.Cod_Integrante
+	toColumn: 'Auxiliar 1 - Responsável'.Cod_Integrante
+
+relationship AutoDetected_95b43777-eb51-4c94-9022-b31d07b0598e
+	fromColumn: BaseAtividades.Cod_Integrante
+	toColumn: 'Auxiliar 1 - Responsável'.Cod_Integrante
+
+relationship 3759c372-1333-f11c-5eb6-59fb3c463384
+	fromColumn: BaseAtividades.'Número do Projeto'
+	toColumn: BaseProjetos.'Código (ID)'
+
+relationship 67777559-8429-2ba8-932e-b3917b02cf5f
+	fromColumn: BaseCusto.'Nº do Projeto'
+	toColumn: BaseProjetos.'Código (ID)'
+
+relationship AutoDetected_9b8cbfee-fcac-4987-9922-0728c4a60dfe
+	crossFilteringBehavior: bothDirections
+	fromColumn: BaseProjetos.Cod_area
+	toColumn: 'Auxiliar 2 - Áreas'.Cod_area
+
+relationship 0f08f067-b263-039f-f4ac-a3e38f3bf92d
+	fromColumn: BaseStatusProjeto.'Código (ID)'
+	toColumn: BaseProjetos.'Código (ID)'
 

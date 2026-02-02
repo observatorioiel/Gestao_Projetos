@@ -2,72 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "9877677f39d6e1b615d0",
   "position": {
-    "x": 0.74714230105507284,
-    "y": 0.83377347346726083,
+    "x": 6.868569609674938,
+    "y": 0.81537654369985391,
     "z": 1000,
-    "height": 117.62796177510145,
-    "width": 289.08839779005513,
+    "height": 78.614173228346459,
+    "width": 282.70866141732284,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "card",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Desvio de Custo %"
-                }
-              },
-              "queryRef": "Medidas.Desvio de Custo %",
-              "nativeQueryRef": "Desvio de Custo %1",
-              "displayName": "Desvio de Custo %"
-            }
-          ],
-          "fieldParameters": [
-            {
-              "parameterExpr": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Desvio_Custo"
-                    }
-                  },
-                  "Property": "Desvio_Custo"
-                }
-              },
-              "index": 0,
-              "length": 1
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
-                  }
-                },
-                "Property": "Desvio de Custo %"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "labels": [
         {

@@ -11,47 +11,6 @@
   },
   "visual": {
     "visualType": "card",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Desvio de Custo Valor"
-                }
-              },
-              "queryRef": "Medidas.Desvio de Custo Valor",
-              "nativeQueryRef": "Desvio de Custo R$",
-              "displayName": "Desvio de Custo R$"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
-                  }
-                },
-                "Property": "Desvio de Custo Valor"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "labels": [
         {

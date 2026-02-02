@@ -1,0 +1,39 @@
+table 'Auxiliar 2 - Áreas'
+	lineageTag: 15705ff5-7082-4304-b4b1-db6e535135eb
+
+	column Áreas
+		dataType: string
+		lineageTag: 0ccef912-fdce-4446-98ad-d9409be053dd
+		summarizeBy: none
+		sourceColumn: Áreas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_area
+		dataType: int64
+		formatString: 0
+		lineageTag: b6ba35fb-df0c-4d9e-8603-cbc3102475c1
+		summarizeBy: none
+		sourceColumn: Cod_area
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Auxiliar 2 - Áreas' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Gestao_Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsm"), null, true),
+				    #"Auxiliar 2 - Áreas_Sheet" = Source{[Item="Auxiliar 2 - Áreas",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Auxiliar 2 - Áreas_Sheet",{{"Column1", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"➤ Áreas", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"➤ Áreas", "Áreas"}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Renamed Columns", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Index",{{"Index", "Cod_area"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

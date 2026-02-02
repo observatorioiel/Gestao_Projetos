@@ -7,33 +7,10 @@
     "z": 14000,
     "height": 77.133550488599354,
     "width": 233.485342019544,
-    "tabOrder": 16000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Áreas da Demanda"
-                    }
-                  },
-                  "Property": "Descricao_Demanda"
-                }
-              },
-              "queryRef": "Áreas da Demanda.Descricao_Demanda",
-              "nativeQueryRef": "Descricao_Demanda",
-              "active": true
-            }
-          ]
-        }
-      }
-    },
     "objects": {
       "data": [
         {

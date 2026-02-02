@@ -7,34 +7,10 @@
     "z": 15000,
     "height": 77.133550488599354,
     "width": 231.40065146579806,
-    "tabOrder": 17000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Etapas Macro"
-                    }
-                  },
-                  "Property": "Descricao_EtapasMacro"
-                }
-              },
-              "queryRef": "Etapas Macro.Descricao_EtapasMacro",
-              "nativeQueryRef": "Etapas Do Projeto",
-              "active": true,
-              "displayName": "Etapas Do Projeto"
-            }
-          ]
-        }
-      }
-    },
     "objects": {
       "data": [
         {
@@ -271,81 +247,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "Filterff843e40709d9ed96c1b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Etapas Macro"
-              }
-            },
-            "Property": "Descricao_EtapasMacro"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "e",
-              "Entity": "Etapas Macro",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "e"
-                              }
-                            },
-                            "Property": "Descricao_EtapasMacro"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
   }
 }

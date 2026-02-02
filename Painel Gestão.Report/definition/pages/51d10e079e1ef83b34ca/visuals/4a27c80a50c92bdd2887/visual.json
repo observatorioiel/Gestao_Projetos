@@ -5,36 +5,13 @@
     "x": 0,
     "y": 0,
     "z": 4000,
-    "height": 125.5202536104262,
-    "width": 292,
-    "tabOrder": 0
+    "height": 99.21875,
+    "width": 288.01785714285717,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
     "autoSelectVisualType": true,
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Qtd Atividades"
-                }
-              },
-              "queryRef": "Medidas.qtd Atividades",
-              "nativeQueryRef": "Atividades",
-              "displayName": "Atividades"
-            }
-          ]
-        }
-      }
-    },
     "objects": {
       "labels": [
         {

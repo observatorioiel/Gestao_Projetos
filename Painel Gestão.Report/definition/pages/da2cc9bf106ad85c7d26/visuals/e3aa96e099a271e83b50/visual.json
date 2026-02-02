@@ -1,0 +1,384 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "e3aa96e099a271e83b50",
+  "position": {
+    "x": 80.274914089347078,
+    "y": 300.20618556701032,
+    "z": 0,
+    "height": 337.59450171821305,
+    "width": 1166.7353951890034,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BaseProjetos"
+                    }
+                  },
+                  "Property": "Nome do Projeto"
+                }
+              },
+              "queryRef": "BaseProjetos.Nome do Projeto",
+              "nativeQueryRef": "Nome do Projeto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BaseProjetos"
+                    }
+                  },
+                  "Property": "Cliente"
+                }
+              },
+              "queryRef": "BaseProjetos.Cliente",
+              "nativeQueryRef": "Cliente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Auxiliar 4 - Fase"
+                    }
+                  },
+                  "Property": "Fase do Projeto"
+                }
+              },
+              "queryRef": "Auxiliar 4 - Fase.Fase do Projeto",
+              "nativeQueryRef": "Fase do Projeto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Auxiliar 1 - Responsável"
+                    }
+                  },
+                  "Property": "Nome do Integrante"
+                }
+              },
+              "queryRef": "Auxiliar 1 - Responsável.Nome do Integrante",
+              "nativeQueryRef": "Nome do Integrante"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Horas Previstas"
+                }
+              },
+              "queryRef": "Medidas.Horas Previstas",
+              "nativeQueryRef": "Horas Previstas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Horas Realizadas"
+                }
+              },
+              "queryRef": "Medidas.Horas Realizadas",
+              "nativeQueryRef": "Horas Realizadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Diferença horas Projeto"
+                }
+              },
+              "queryRef": "Medidas.Diferença horas Projeto",
+              "nativeQueryRef": "Diferença horas Projeto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Custo Total Previsto"
+                }
+              },
+              "queryRef": "Medidas.Custo Total Previsto",
+              "nativeQueryRef": "Custo Total Previsto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Custo Total Realizado"
+                }
+              },
+              "queryRef": "Medidas.Custo Total Realizado",
+              "nativeQueryRef": "Custo Total Realizado"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Diferença Valor Projeto"
+                }
+              },
+              "queryRef": "Medidas.Diferença Valor Projeto",
+              "nativeQueryRef": "Diferença Valor Projeto"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "BaseProjetos"
+                  }
+                },
+                "Property": "Cliente"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medidas.Horas Previstas"
+          }
+        },
+        {
+          "properties": {
+            "icon": {
+              "kind": "Icon",
+              "layout": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Before'"
+                  }
+                }
+              },
+              "verticalAlignment": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Top'"
+                  }
+                }
+              },
+              "value": {
+                "expr": {
+                  "Conditional": {
+                    "Cases": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 2,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "Medidas"
+                                  }
+                                },
+                                "Property": "Diferença horas Projeto"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleLow'"
+                          }
+                        }
+                      },
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 3,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "Medidas"
+                                  }
+                                },
+                                "Property": "Diferença horas Projeto"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleHigh'"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medidas.Diferença horas Projeto"
+          }
+        },
+        {
+          "properties": {
+            "icon": {
+              "kind": "Icon",
+              "layout": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Before'"
+                  }
+                }
+              },
+              "verticalAlignment": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Top'"
+                  }
+                }
+              },
+              "value": {
+                "expr": {
+                  "Conditional": {
+                    "Cases": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 2,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "Medidas"
+                                  }
+                                },
+                                "Property": "Diferença Valor Projeto"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleLow'"
+                          }
+                        }
+                      },
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 3,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Entity": "Medidas"
+                                  }
+                                },
+                                "Property": "Diferença Valor Projeto"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          }
+                        },
+                        "Value": {
+                          "Literal": {
+                            "Value": "'CircleHigh'"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medidas.Diferença Valor Projeto"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -13,5 +13,6 @@
     "displayName": "Valor Gasto",
     "groupMode": "ScaleMode"
   },
-  "parentGroupName": "d62a7ccf74fc2aa78aa9"
+  "parentGroupName": "d62a7ccf74fc2aa78aa9",
+  "isHidden": true
 }

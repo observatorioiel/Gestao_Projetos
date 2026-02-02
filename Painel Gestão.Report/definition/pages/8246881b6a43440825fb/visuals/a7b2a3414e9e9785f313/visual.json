@@ -12,47 +12,6 @@
   "visual": {
     "visualType": "card",
     "autoSelectVisualType": true,
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Total horas Atividades 0"
-                }
-              },
-              "queryRef": "Medidas.Total horas Atividades 0",
-              "nativeQueryRef": "Total Horas Utilizadas ",
-              "displayName": "Total Horas Utilizadas "
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
-                  }
-                },
-                "Property": "Total horas Atividades 0"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "labels": [
         {

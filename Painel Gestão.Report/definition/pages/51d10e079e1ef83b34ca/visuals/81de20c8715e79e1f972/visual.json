@@ -3,56 +3,15 @@
   "name": "81de20c8715e79e1f972",
   "position": {
     "x": 0,
-    "y": 2,
+    "y": 2.1416430594900886,
     "z": 14000,
-    "height": 125,
-    "width": 292.15921098978515,
+    "height": 97.858356940509893,
+    "width": 288.755905511811,
     "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
     "autoSelectVisualType": true,
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "valorEstimado"
-                }
-              },
-              "queryRef": "Medidas.valorEstimado",
-              "nativeQueryRef": "Valor Estimado",
-              "displayName": "Valor Estimado"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Medidas"
-                  }
-                },
-                "Property": "valorEstimado"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "labels": [
         {

@@ -11,29 +11,6 @@
   },
   "visual": {
     "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Áreas da Demanda"
-                    }
-                  },
-                  "Property": "Descricao_Demanda"
-                }
-              },
-              "queryRef": "Áreas da Demanda.Descricao_Demanda",
-              "nativeQueryRef": "Descricao_Demanda",
-              "active": true
-            }
-          ]
-        }
-      }
-    },
     "objects": {
       "data": [
         {

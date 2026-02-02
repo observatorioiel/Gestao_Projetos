@@ -1,18 +1,20 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "6b61bdca57d46fa3fb9c",
   "position": {
-    "x": 6.3510387530538521,
-    "y": 11.554381592928175,
+    "x": 0,
+    "y": 251.37931034482759,
     "z": 1000,
-    "height": 358.177874186551,
-    "width": 751.06290672451189,
-    "tabOrder": 1000
+    "height": 748.81773399014776,
+    "width": 1484.3349753694581
   },
   "visual": {
     "visualType": "pivotTable",
     "query": {
       "queryState": {
+        "Columns": {
+          "projections": []
+        },
         "Rows": {
           "projections": [
             {
@@ -20,30 +22,74 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Projetos Observatorio"
+                      "Entity": "BaseProjetos"
                     }
                   },
                   "Property": "Nome do Projeto"
                 }
               },
-              "queryRef": "Projetos.Nome do Projeto",
-              "nativeQueryRef": "Projeto",
-              "active": true,
-              "displayName": "Projeto"
+              "queryRef": "BaseProjetos.Nome do Projeto",
+              "nativeQueryRef": "Nome do Projeto",
+              "active": true
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Etapas Macro"
+                      "Entity": "BaseProjetos"
                     }
                   },
-                  "Property": "Descricao_EtapasMacro"
+                  "Property": "Cliente"
                 }
               },
-              "queryRef": "Etapas Macro.Descricao_EtapasMacro",
-              "nativeQueryRef": "Descricao_EtapasMacro",
+              "queryRef": "BaseProjetos.Cliente",
+              "nativeQueryRef": "Cliente",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Auxiliar 3 - Etapas"
+                    }
+                  },
+                  "Property": "Desc_Etapa"
+                }
+              },
+              "queryRef": "Auxiliar 3 - Etapas.Desc_Etapa",
+              "nativeQueryRef": "Desc_Etapa",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Auxiliar 4 - Fase"
+                    }
+                  },
+                  "Property": "Fase do Projeto"
+                }
+              },
+              "queryRef": "Auxiliar 4 - Fase.Fase do Projeto",
+              "nativeQueryRef": "Fase do Projeto",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Auxiliar 1 - Responsável"
+                    }
+                  },
+                  "Property": "Nome do Integrante"
+                }
+              },
+              "queryRef": "Auxiliar 1 - Responsável.Nome do Integrante",
+              "nativeQueryRef": "Nome do Integrante",
               "active": false
             }
           ]
@@ -58,12 +104,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "HorasEstimadasFormatada"
+                  "Property": "Horas Previstas"
                 }
               },
-              "queryRef": "Medidas.HorasEstimadasFormatada",
-              "nativeQueryRef": "Horas Estimadas",
-              "displayName": "Horas Estimadas"
+              "queryRef": "Medidas.Horas Previstas",
+              "nativeQueryRef": "Horas Previstas"
             },
             {
               "field": {
@@ -73,12 +118,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Total horas Atividades"
+                  "Property": "Horas Realizadas"
                 }
               },
-              "queryRef": "Medidas.Total horas Atividades",
-              "nativeQueryRef": "Horas Utilizadas",
-              "displayName": "Horas Utilizadas"
+              "queryRef": "Medidas.Horas Realizadas",
+              "nativeQueryRef": "Horas Realizadas"
             },
             {
               "field": {
@@ -88,12 +132,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "DiferencaHorasFormatada"
+                  "Property": "Custo Total Previsto"
                 }
               },
-              "queryRef": "Medidas.DiferencaHorasFormatada",
-              "nativeQueryRef": "Difrença Horas1",
-              "displayName": "Difrença Horas"
+              "queryRef": "Medidas.Custo Total Previsto",
+              "nativeQueryRef": "Custo Total Previsto"
             },
             {
               "field": {
@@ -103,32 +146,14 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "horas estimada / horas realizadas"
+                  "Property": "Custo Total Realizado"
                 }
               },
-              "queryRef": "Medidas.horas estimada / horas realizadas",
-              "nativeQueryRef": "% DIfrença Hroas",
-              "displayName": "% DIfrença Hroas"
+              "queryRef": "Medidas.Custo Total Realizado",
+              "nativeQueryRef": "Custo Total Realizado"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Projetos Observatorio"
-                  }
-                },
-                "Property": "Nome do Projeto"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "expansionStates": [
@@ -139,7 +164,7 @@
         "levels": [
           {
             "queryRefs": [
-              "Projetos.Nome do Projeto"
+              "BaseProjetos.Nome do Projeto"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -147,7 +172,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Projetos Observatorio"
+                      "Entity": "BaseProjetos"
                     }
                   },
                   "Property": "Nome do Projeto"
@@ -158,74 +183,86 @@
           },
           {
             "queryRefs": [
-              "Etapas Macro.Descricao_EtapasMacro"
+              "BaseProjetos.Cliente"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BaseProjetos"
+                    }
+                  },
+                  "Property": "Cliente"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Auxiliar 3 - Etapas.Desc_Etapa"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Auxiliar 3 - Etapas"
+                    }
+                  },
+                  "Property": "Desc_Etapa"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Auxiliar 4 - Fase.Fase do Projeto"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Auxiliar 4 - Fase"
+                    }
+                  },
+                  "Property": "Fase do Projeto"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Auxiliar 1 - Responsável.Nome do Integrante"
             ],
             "isCollapsed": true,
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'PESQUISA DE SATISFAÇÃO NPS'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "101.66666666666667D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.horas estimada / horas realizadas"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "311.72106610309106D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Projetos.Nome do Projeto"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "103.0000018328874D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.HorasEstimadasFormatada"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "97.33332680051478D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Total horas Atividades"
-          }
-        }
-      ],
       "general": [
         {
           "properties": {
@@ -386,143 +423,6 @@
               }
             }
           }
-        },
-        {
-          "properties": {
-            "icon": {
-              "kind": "Icon",
-              "layout": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'Before'"
-                  }
-                }
-              },
-              "verticalAlignment": {
-                "expr": {
-                  "Literal": {
-                    "Value": "'Top'"
-                  }
-                }
-              },
-              "value": {
-                "expr": {
-                  "Conditional": {
-                    "Cases": [
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 4,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Entity": "Medidas"
-                                  }
-                                },
-                                "Property": "horas estimada / horas realizadas"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "1D"
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'SymbolHigh'"
-                          }
-                        }
-                      },
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 1,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Entity": "Medidas"
-                                  }
-                                },
-                                "Property": "horas estimada / horas realizadas"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "1.01D"
-                              }
-                            }
-                          }
-                        },
-                        "Value": {
-                          "Literal": {
-                            "Value": "'SymbolLow'"
-                          }
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Medidas.horas estimada / horas realizadas"
-          }
-        }
-      ],
-      "columnFormatting": [
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Left'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.HorasEstimadasFormatada"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Left'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Total horas Atividades"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.horas estimada / horas realizadas"
-          }
         }
       ],
       "blankRows": [
@@ -541,15 +441,10 @@
       "grid": [
         {
           "properties": {
-            "outlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -672,5 +567,120 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "6ab09a7c5b33b396ed29"
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fb32a4075cb98d73b70d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "BaseProjetos"
+              }
+            },
+            "Property": "Nome do Projeto"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "18ec43a1d03659d1887b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Auxiliar 4 - Fase"
+              }
+            },
+            "Property": "Fase do Projeto"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "aa19c348945b10714245",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Auxiliar 3 - Etapas"
+              }
+            },
+            "Property": "Desc_Etapa"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "719a7cb7aca10d0ba591",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Horas Previstas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f55773d58e492859614",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Horas Realizadas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c317deeaaa8dac6eebc4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Custo Total Previsto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "08788dadead04c6e405d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Custo Total Realizado"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "54d5f87b8cb367b4981b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Auxiliar 1 - Responsável"
+              }
+            },
+            "Property": "Nome do Integrante"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

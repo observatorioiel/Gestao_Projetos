@@ -1,0 +1,107 @@
+table BaseProjetos
+	lineageTag: 01049b18-7d6c-47c0-aead-f65fcf14617a
+
+	column 'Código (ID)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 50de2e7e-7c47-40d9-8355-2cf6f13948d1
+		summarizeBy: none
+		sourceColumn: Código (ID)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Projeto'
+		dataType: string
+		lineageTag: f0e5a7dd-eff3-40a9-99e1-235a09e20cae
+		summarizeBy: none
+		sourceColumn: Nome do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		lineageTag: 32fb6ee9-5bce-48cd-ae1a-a842dcf31f2d
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNPJ/CPF
+		dataType: string
+		lineageTag: 18d078e5-4df7-4095-a263-2dca75e82c79
+		summarizeBy: none
+		sourceColumn: CNPJ/CPF
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Área de Atendimento'
+		dataType: string
+		lineageTag: bd6c0c3d-d529-4995-acb6-69e55fdfa274
+		summarizeBy: none
+		sourceColumn: Área de Atendimento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gerente do Projeto'
+		dataType: string
+		lineageTag: 9db019bf-1349-4543-b954-19f297ee217c
+		summarizeBy: none
+		sourceColumn: Gerente do Projeto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data de Lançamento'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2f0fd2fd-07cd-44bd-a643-8c8943855a87
+		summarizeBy: none
+		sourceColumn: Data de Lançamento
+
+		variation Variation
+			isDefault
+			relationship: c156b192-a199-45b6-aba0-07d086cb6cc3
+			defaultHierarchy: LocalDateTable_52d6d8c8-b95a-4985-86a6-52cb004ba1fc.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Objeto da Proposta'
+		dataType: string
+		lineageTag: bb7c5272-9013-4739-99e3-1c2b0d15b8fb
+		summarizeBy: none
+		sourceColumn: Objeto da Proposta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_area
+		dataType: int64
+		formatString: 0
+		lineageTag: 368d79cf-2681-4585-bd10-5c552e88746d
+		summarizeBy: none
+		sourceColumn: Cod_area
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BaseProjetos = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://sesigoias-my.sharepoint.com/personal/observatorio_iel_fieg_com_br/Documents/Painel%20Gest%C3%A3o%20De%20Projetos/Gestao_Projetos/Base%20De%20Dados/Gest%C3%A3o%20de%20Projetos%20-%20Planilha%20de%20acompanhamento%20-%20observat%C3%B3rio.xlsm"), null, true),
+				    Projetos_Sheet = Source{[Item="Projetos",Kind="Sheet"]}[Data],
+				    #"Changed Type1" = Table.TransformColumnTypes(Projetos_Sheet,{{"Column4", type text}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Changed Type1", [PromoteAllScalars=true]),
+				    #"Filtered Rows1" = Table.SelectRows(#"Promoted Headers1", each ([#"Código (ID)"] <> null)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows1",{{"Código (ID)", Int64.Type}, {"Nome do Projeto", type text}, {"Cliente", type text}, {"CNPJ/CPF", Int64.Type}, {"Área de Atendimento", type text}, {"Gerente do Projeto", type text}, {"Data de Lançamento", type date}, {"Objeto da Proposta", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([#"Código (ID)"] <> null)),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Filtered Rows",{{"CNPJ/CPF", type text}}),
+				    #"Merged Queries" = Table.FuzzyNestedJoin(#"Changed Type2", {"Área de Atendimento"}, #"Auxiliar 2 - Áreas", {"Áreas"}, "Auxiliar 2 - Áreas", JoinKind.LeftOuter, [IgnoreCase=true, IgnoreSpace=true]),
+				    #"Expanded Auxiliar 2 - Áreas" = Table.ExpandTableColumn(#"Merged Queries", "Auxiliar 2 - Áreas", {"Cod_area"}, {"Auxiliar 2 - Áreas.Cod_area"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Auxiliar 2 - Áreas",{{"Auxiliar 2 - Áreas.Cod_area", "Cod_area"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

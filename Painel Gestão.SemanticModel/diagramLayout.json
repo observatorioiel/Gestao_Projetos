@@ -4,218 +4,130 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 65.279100388891308,
-        "y": 156025.56459471837
+        "x": 2.5884342787939394,
+        "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 524.88528400000041,
-            "y": 156877.88799570373
+            "x": 0,
+            "y": 170.73900041509864
           },
-          "nodeIndex": "Áreas da Demanda",
-          "nodeLineageTag": "9618c07b-c22b-4f45-b9ee-58917196b2a1",
+          "nodeIndex": "Auxiliar 1 - Responsável",
+          "nodeLineageTag": "14b84a85-2559-42f8-9dac-3b2d93ae639d",
           "size": {
-            "height": 145,
-            "width": 234
-          },
-          "zIndex": 5
-        },
-        {
-          "location": {
-            "x": 601.12795900000015,
-            "y": 155945.70978370373
-          },
-          "nodeIndex": "Classe do Projeto",
-          "nodeLineageTag": "7e9b04cd-18f0-451f-a8b1-818fb6879f16",
-          "size": {
-            "height": 146.51746400000002,
-            "width": 234
-          },
-          "zIndex": 6
-        },
-        {
-          "location": {
-            "x": 1132.591955,
-            "y": 155964.54475770373
-          },
-          "nodeIndex": "Cliente Final",
-          "nodeLineageTag": "56bb4695-2262-40d0-bd1f-46df83a36be2",
-          "size": {
-            "height": 145,
-            "width": 234
-          },
-          "zIndex": 11
-        },
-        {
-          "location": {
-            "x": 864.68531699999994,
-            "y": 155956.61461370371
-          },
-          "nodeIndex": "Etapas Macro",
-          "nodeLineageTag": "e470d850-3470-4a5d-910c-af838f1da257",
-          "size": {
-            "height": 145,
-            "width": 234
-          },
-          "zIndex": 10
-        },
-        {
-          "location": {
-            "x": 1394.5502399999998,
-            "y": 155970.29744770372
-          },
-          "nodeIndex": "Fontes de Recursos",
-          "nodeLineageTag": "7a52ba4e-f9a6-41ad-8591-772d636ce0f9",
-          "size": {
-            "height": 145,
-            "width": 234
-          },
-          "zIndex": 7
-        },
-        {
-          "location": {
-            "x": 1136.29448851645,
-            "y": 156927.18149740231
-          },
-          "nodeIndex": "Status do Projeto",
-          "nodeLineageTag": "29420b16-ff35-4d9b-a2bc-a6b99336b3d1",
-          "size": {
-            "height": 153.60370799999998,
-            "width": 234
-          },
-          "zIndex": 12
-        },
-        {
-          "location": {
-            "x": 292.40158899999972,
-            "y": 155980.96885970372
-          },
-          "nodeIndex": "Subetapas do projeto",
-          "nodeLineageTag": "f8cc80f6-5153-4d68-9191-488e6b7de6d6",
-          "size": {
-            "height": 293.6083430000001,
-            "width": 234
-          },
-          "zIndex": 13
-        },
-        {
-          "location": {
-            "x": 1414.6273056626492,
-            "y": 156835.39061718961
-          },
-          "nodeIndex": "Tabela Hora x Custo Colaborador",
-          "nodeLineageTag": "5d6d866d-b2d4-437f-98fe-436be69adc8e",
-          "size": {
-            "height": 245.258732,
-            "width": 234
-          },
-          "zIndex": 8
-        },
-        {
-          "location": {
-            "x": 865.14616800000067,
-            "y": 156785.42859356888
-          },
-          "nodeIndex": "Calendario",
-          "nodeLineageTag": "5ae2e9f7-e633-4797-b978-e5250939504f",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 9
-        },
-        {
-          "location": {
-            "x": 1902.293991,
-            "y": 156320.48580799924
-          },
-          "nodeIndex": "Medidas",
-          "nodeLineageTag": "e427e664-d71e-4e0a-a132-70f88fc3ab40",
-          "size": {
-            "height": 104,
-            "width": 234
-          },
-          "zIndex": 4
-        },
-        {
-          "location": {
-            "x": 1900.3982389332491,
-            "y": 156457.72947470372
-          },
-          "nodeIndex": "Desvio_Custo",
-          "nodeLineageTag": "edac0340-609f-456e-9118-194ceb76daf0",
-          "size": {
-            "height": 152,
+            "height": 176,
             "width": 234
           },
           "zIndex": 1
         },
         {
           "location": {
-            "x": 1808.3982389332491,
-            "y": 114688.7027295592
+            "x": 826.98067025420312,
+            "y": 0
           },
-          "nodeIndex": "Colunas_parametro",
+          "nodeIndex": "Auxiliar 2 - Áreas",
+          "nodeLineageTag": "15705ff5-7082-4304-b4b1-db6e535135eb",
           "size": {
-            "height": 152,
+            "height": 128,
             "width": 234
           },
           "zIndex": 2
         },
         {
           "location": {
-            "x": 1808.3982389332491,
-            "y": 106999.76643313674
+            "x": 0,
+            "y": 0
           },
-          "nodeIndex": "Desvio_Esforço",
+          "nodeIndex": "Auxiliar 3 - Etapas",
+          "nodeLineageTag": "086bc0c2-9c1c-462c-a012-aa3791ef266d",
           "size": {
-            "height": 152,
+            "height": 176,
             "width": 234
           },
           "zIndex": 3
         },
         {
           "location": {
-            "x": 2153.6101636701978,
-            "y": 96302.4904155332
+            "x": 1219.5829760337904,
+            "y": 42.198493201893029
           },
-          "nodeIndex": "Area_Status",
-          "nodeLineageTag": "247d13c2-fdaf-4368-9a87-667a87e0faeb",
+          "nodeIndex": "Auxiliar 4 - Fase",
+          "nodeLineageTag": "ee7bdebd-8f03-4f5b-9710-d94e1263e0e2",
           "size": {
-            "height": 152,
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 668.29079973675721,
+            "y": 613.48940434936708
+          },
+          "nodeIndex": "BaseAtividades",
+          "nodeLineageTag": "b8cbb00d-9a76-473c-be91-9048ce2899d3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 392.64662141249596,
+            "y": 492.83810769756775
+          },
+          "nodeIndex": "BaseCusto",
+          "nodeLineageTag": "fc144b7f-a5b2-4ad1-a46f-19421082ce57",
+          "size": {
+            "height": 451.72946203708182,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1082.0191578584963,
+            "y": 294.4302043219958
+          },
+          "nodeIndex": "BaseProjetos",
+          "nodeLineageTag": "01049b18-7d6c-47c0-aead-f65fcf14617a",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1503.5829760337904,
+            "y": 420.28378486732481
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "b4d0a7b4-9847-4cc6-84f3-b08477752b85",
+          "size": {
+            "height": 104,
             "width": 234
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 789.98345644618064,
-            "y": 156256.35929991063
+            "x": 1491.2072708600706,
+            "y": 138.38252838190056
           },
-          "nodeIndex": "Atividades Observatorio",
-          "nodeLineageTag": "f1069741-ea04-4eba-a5a6-41972ba73a65",
+          "nodeIndex": "BaseStatusProjeto",
+          "nodeLineageTag": "b1e3cdf6-7c06-4b78-8be2-200e2df1090e",
           "size": {
-            "height": 410.06711332797363,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 32.683827329801943,
-            "y": 156231.63921925577
-          },
-          "nodeIndex": "Projetos Observatorio",
-          "size": {
-            "height": 575.08378267632861,
+            "height": 176,
             "width": 234
           },
           "zIndex": 0
         }
       ],
       "name": "Todas as tabelas",
-      "zoomValue": 70.466657361944769,
+      "zoomValue": 77.266786967907265,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

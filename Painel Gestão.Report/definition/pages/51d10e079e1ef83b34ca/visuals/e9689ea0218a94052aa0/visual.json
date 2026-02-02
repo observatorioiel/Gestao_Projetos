@@ -7,33 +7,10 @@
     "z": 13000,
     "height": 77.133550488599354,
     "width": 233.485342019544,
-    "tabOrder": 15000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Projetos Observatorio"
-                    }
-                  },
-                  "Property": "Nome do Projeto"
-                }
-              },
-              "queryRef": "Projetos Observatorio.Nome do Projeto",
-              "nativeQueryRef": "Nome do Projeto",
-              "active": true
-            }
-          ]
-        }
-      }
-    },
     "objects": {
       "data": [
         {
